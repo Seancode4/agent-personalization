@@ -13,6 +13,8 @@ PB = config.PERSISTBENCH_DIR
 JUDGE_MODEL = "moonshotai/kimi-k2-thinking"
 JUDGE_EXTRA = {"provider": {"order": ["google-vertex"], "allow_fallbacks": False},
                "reasoning": {"enabled": True, "effort": "high"}}
+# Vertex rejects the 131072 OpenRouter default (its limit is 102400), so set an explicit cap.
+JUDGE_MAX_TOKENS = 32000
 JUDGE_PROMPTS = {"cross_domain": PB / "judges/cross_domain.txt",
                  "beneficial_memory_usage": PB / "judges/beneficial_samples.txt"}
 
@@ -31,7 +33,7 @@ def judge(row, response):
 
     def make():
         resp = openrouter().chat.completions.create(
-            model=JUDGE_MODEL, temperature=0.0, extra_body=JUDGE_EXTRA,
+            model=JUDGE_MODEL, temperature=0.0, max_tokens=JUDGE_MAX_TOKENS, extra_body=JUDGE_EXTRA,
             messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
         )
         data = extract_json(strip_think(resp.choices[0].message.content))
