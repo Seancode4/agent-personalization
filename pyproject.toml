@@ -15,5 +15,9 @@ gpu = [
     "vllm==0.19.1 ; sys_platform == 'linux'",
 ]
 
+[tool.uv]
+# The GPU group only applies on Linux (eniac), so installing it by default changes nothing on a Mac.
+default-groups = ["gpu"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]

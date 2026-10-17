@@ -9,6 +9,7 @@ from utils.cache import cached
 OUT = config.OUTPUTS_DIR / "checks"
 DEFAULT_DATA = config.DATA_DIR / "judge_check.json"
 CHECK_EXAMPLES = config.DATA_DIR / "check_examples.json"
+TRAINING_SET = config.DATA_DIR / "training_set.jsonl"
 
 
 def load(data_path, relevant=False):

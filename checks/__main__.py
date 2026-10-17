@@ -18,7 +18,7 @@ judge, rubrics and policy share cached answers and rubrics under outputs/checks/
 import argparse
 from pathlib import Path
 
-from checks.common import CHECK_EXAMPLES, DEFAULT_DATA
+from checks.common import DEFAULT_DATA, TRAINING_SET
 
 
 def main():
@@ -33,7 +33,7 @@ def main():
     p.add_argument("--regenerate", action="store_true", help="rewrite cached rubrics and labels")
     sub.add_parser("env", help="GPU, vLLM, caches and keys are set up (GPU)")
     p = sub.add_parser("policy", help="untrained policy: memory mentions, reward spread, length (GPU)")
-    p.add_argument("--data", type=Path, default=CHECK_EXAMPLES)
+    p.add_argument("--data", type=Path, default=TRAINING_SET, help="needs both relevant and irrelevant examples")
     p.add_argument("--prompts", type=int, default=20, help="per kind (irrelevant and relevant)")
     p.add_argument("--samples", type=int, default=8)
     sub.add_parser("persist", help="step-0 PersistBench on the untrained policy (GPU)")
