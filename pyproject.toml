@@ -1,0 +1,7 @@
+[project]
+name = "over-personalization"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=3.33.0",
+]

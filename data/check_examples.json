@@ -1,0 +1,982 @@
+[
+  {
+    "id": "ex000",
+    "occupation": "real estate agent",
+    "age": "70s",
+    "city": "Anchorage",
+    "topic": "programming",
+    "adjacent": true,
+    "memories": [
+      "Enjoys fishing in Cook Inlet during weekends.",
+      "Prefers a low-carb diet to manage energy levels.",
+      "Has a golden retriever named Max who joins on office visits.",
+      "Attends weekly yoga classes to stay flexible.",
+      "Volunteers at the local animal shelter every Sunday.",
+      "Celebrates their granddaughter's 10th birthday in June.",
+      "Loves exploring unique architecture in the Anchorage area.",
+      "Often uses a walkable route to the downtown office."
+    ],
+    "query": "What are the best practices for error handling in Python?",
+    "memory_sentence": "Just like you'd want to ensure Max doesn't wander off on your way to the office, effective error handling prevents your program from straying into unexpected states."
+  },
+  {
+    "id": "ex001",
+    "occupation": "bank teller",
+    "age": "40s",
+    "city": "New Orleans",
+    "topic": "mathematics",
+    "adjacent": false,
+    "memories": [
+      "Enjoys cooking traditional Creole dishes on weekends",
+      "Raises two teenage daughters who are into jazz music",
+      "Practices yoga every morning to manage stress from work",
+      "Supports the local high school football team as a volunteer coach",
+      "Celebrates Mardi Gras every year with a large family gathering",
+      "Prefers plant-based meals on weekdays for health reasons",
+      "Lives in a historic shotgun house in the Faubourg Marigny neighborhood",
+      "Recently adopted a rescue dog named Benny to keep active"
+    ],
+    "query": "What is the formula for the volume of a cylinder?",
+    "memory_sentence": "As you know from your yoga practice, focusing on your breath can help you stay calm while solving complex math problems."
+  },
+  {
+    "id": "ex003",
+    "occupation": "neuroscience grad student",
+    "age": "70s",
+    "city": "Minneapolis",
+    "topic": "economics",
+    "adjacent": false,
+    "memories": [
+      "Studies neuroplasticity and its effects on aging.",
+      "Enjoys gardening, especially growing heirloom tomatoes.",
+      "Follow a mostly plant-based diet, with occasional fish.",
+      "Volunteers at a local community center teaching technology skills.",
+      "Has a black cat named Einstein who adores lounging in the sun.",
+      "Takes daily walks around Lake Harriet for exercise and fresh air.",
+      "Plans to attend a conference on cognitive rehabilitation next month.",
+      "Lives in a cozy bungalow built in the 1920s in the Linden Hills neighborhood."
+    ],
+    "query": "What are the main factors that influence inflation rates in an economy?",
+    "memory_sentence": "As you enjoy growing heirloom tomatoes, consider how inflation can impact the prices of fruits and vegetables."
+  },
+  {
+    "id": "ex004",
+    "occupation": "civil engineer",
+    "age": "60s",
+    "city": "Baltimore",
+    "topic": "astronomy",
+    "adjacent": false,
+    "memories": [
+      "Enjoys gardening on weekends, especially growing tomatoes and cucumbers.",
+      "Prefers a Mediterranean diet, often experimenting with new vegetarian recipes.",
+      "Has a habit of taking long walks along the Baltimore Inner Harbor every morning.",
+      "Attends monthly civil engineering meetups to stay updated with industry trends.",
+      "Celebrates family dinners every Sunday with his three grandchildren and their parents.",
+      "Volunteers at a local shelter, helping with infrastructure projects to improve facilities.",
+      "Recently started woodworking as a new hobby, making furniture for his home.",
+      "Lives in a historic row house in Federal Hill, appreciating its architectural charm."
+    ],
+    "query": "What is the life cycle of a star?",
+    "memory_sentence": "While you enjoy spending time gardening on weekends, stars go through several fascinating stages in their life cycle."
+  },
+  {
+    "id": "ex005",
+    "occupation": "air traffic controller",
+    "age": "early 20s",
+    "city": "Pittsburgh",
+    "topic": "philosophy",
+    "adjacent": false,
+    "memories": [
+      "Enjoys making homemade pizza on weekends.",
+      "Practices yoga three times a week to manage stress.",
+      "Remembers a family tradition of hiking in Ohiopyle State Park each summer.",
+      "Regularly volunteers at a local animal shelter.",
+      "Celebrates birthday with a close-knit group of college friends every year.",
+      "Prefers a vegetarian diet but occasionally indulges in BBQ during game nights.",
+      "Recently adopted a rescue dog named Charlie.",
+      "Lives in a historic apartment building near Point State Park."
+    ],
+    "query": "What is the purpose of existence according to existentialist philosophy?",
+    "memory_sentence": "Since you enjoy making homemade pizza on weekends, consider how culinary experiences can shape our understanding of purpose."
+  },
+  {
+    "id": "ex006",
+    "occupation": "restaurant line cook",
+    "age": "40s",
+    "city": "Pittsburgh",
+    "topic": "chemistry",
+    "adjacent": false,
+    "memories": [
+      "Enjoys culinary experimentation with homemade pasta recipes on weekends.",
+      "Prefers a low-carb diet, focusing on protein-rich meals after long shifts.",
+      "Engages in weekly hiking trips at Frick Park, appreciating nature and local wildlife.",
+      "Celebrates family gatherings by preparing traditional pierogies handed down from grandparents.",
+      "Struggles with managing stress from the demanding kitchen environment but finds solace in meditation.",
+      "Takes pride in volunteering at local food banks to support the Pittsburgh community.",
+      "Recently adopted a rescue dog named Max, who enjoys joining on nighttime walks.",
+      "Lives in a cozy apartment near the Strip District, often visiting local markets for fresh ingredients."
+    ],
+    "query": "What is the role of catalysis in chemical reactions?",
+    "memory_sentence": "While you're enjoying your culinary experimentation with homemade pasta recipes, remember that catalysis can greatly speed up a chemical reaction."
+  },
+  {
+    "id": "ex007",
+    "occupation": "freelance photographer",
+    "age": "40s",
+    "city": "Salt Lake City",
+    "topic": "economics",
+    "adjacent": true,
+    "memories": [
+      "Captures landscapes during the early morning golden hour.",
+      "Prefers a vegetarian diet and experiments with new recipes weekly.",
+      "Enjoys hiking in the Wasatch Mountains with their teenage son.",
+      "Documents the growth of their daughter\u2019s art projects on Instagram.",
+      "Listens to jazz music while editing photos to find inspiration.",
+      "Participates in local art shows, showcasing work focused on urban settings.",
+      "Regularly visits the Salt Lake City Farmers Market for fresh produce.",
+      "Plans to take a road trip across Utah to photograph national parks this summer."
+    ],
+    "query": "How does inflation impact the purchasing power of consumers?",
+    "memory_sentence": "As you plan your road trip across Utah to photograph national parks, consider how inflation can affect the cost of gas and accommodations."
+  },
+  {
+    "id": "ex008",
+    "occupation": "civil engineer",
+    "age": "early 20s",
+    "city": "Atlanta",
+    "topic": "US government",
+    "adjacent": false,
+    "memories": [
+      "Values family dinners on Sunday evenings with parents and younger sister.",
+      "Prefers a plant-based diet, experimenting with new vegan recipes each week.",
+      "Enjoys rock climbing at local gyms, finding it a great way to relieve stress.",
+      "Studies for the Professional Engineer exam, dedicating evenings to review materials.",
+      "Volunteers with a nonprofit focused on sustainable building projects in Atlanta.",
+      "Recently adopted a rescue dog named Max, who loves playing in Piedmont Park.",
+      "Participates in a weekly running group preparing for a half marathon this spring.",
+      "Lives in a small apartment in the Virginia-Highland neighborhood, enjoying the community vibe."
+    ],
+    "query": "What are the main responsibilities of the US Congress?",
+    "memory_sentence": "While you're experimenting with new vegan recipes this week, it's interesting to note that Congress plays a key role in shaping food policy."
+  },
+  {
+    "id": "ex009",
+    "occupation": "graphic novelist",
+    "age": "60s",
+    "city": "Boston",
+    "topic": "philosophy",
+    "adjacent": false,
+    "memories": [
+      "Loves to take long walks along the Charles River every Sunday afternoon.",
+      "Prefers working with watercolors and ink for graphic novels.",
+      "Enjoys attending local comic conventions to meet fellow artists and fans.",
+      "Has a daughter studying art history in Paris.",
+      "Frequently experiments with plant-based recipes for better health.",
+      "Celebrates their 40th wedding anniversary this year.",
+      "Volunteers at a community art center in Boston to inspire young artists.",
+      "Lives in a historic brownstone in the South End neighborhood."
+    ],
+    "query": "What is the difference between existentialism and absurdism in philosophy?",
+    "memory_sentence": "As you enjoy attending local comic conventions, consider how existential themes often resonate in graphic novels."
+  },
+  {
+    "id": "ex010",
+    "occupation": "electrician",
+    "age": "late 20s",
+    "city": "Pittsburgh",
+    "topic": "ancient history",
+    "adjacent": true,
+    "memories": [
+      "Maintains a collection of vintage tools passed down from grandfather.",
+      "Prefers vegetarian meals on weekdays and indulges in BBQ on weekends.",
+      "Loves hiking trails in Frick Park, especially during the fall for the foliage.",
+      "Regularly volunteers with a local nonprofit to teach children about basic electrical safety.",
+      "Rides a custom-built bike to work daily, enjoying the fresh air and exercise.",
+      "Celebrates family game night every Friday with pizza and board games.",
+      "Lives in a renovated loft in the Strip District with an exposed brick wall and large windows.",
+      "Shares an obsession with classic rock music and attends live concerts whenever possible."
+    ],
+    "query": "What were the primary causes of the fall of the Roman Empire?",
+    "memory_sentence": "As you enjoy vintage tools passed down from your grandfather, let's delve into the complex tools of political and economic power that shaped Roman society."
+  },
+  {
+    "id": "ex011",
+    "occupation": "stay-at-home parent",
+    "age": "late 20s",
+    "city": "a small town in Ohio",
+    "topic": "astronomy",
+    "adjacent": false,
+    "memories": [
+      "Prefers organic produce from the local farmers' market every Saturday.",
+      "Enjoys crafting hand-made holiday decorations with their children.",
+      "Trains for a 5K run twice a week, planning to participate in the upcoming town event.",
+      "Revisits favorite childhood books to read to their kids at bedtime.",
+      "Follows a strict vegetarian diet for health reasons, focusing on plant-based recipes.",
+      "Volunteers monthly at the community food pantry with their family.",
+      "Keeps a vegetable garden in their backyard, growing tomatoes and peppers.",
+      "Lives in a quiet neighborhood near a scenic park, ideal for family walks."
+    ],
+    "query": "What are the main differences between a neutron star and a black hole?",
+    "memory_sentence": "Since you enjoy crafting hand-made holiday decorations with your children, let\u2019s explore how fascinating astronomical phenomena can inspire creative projects!"
+  },
+  {
+    "id": "ex012",
+    "occupation": "pharmacist",
+    "age": "early 20s",
+    "city": "Atlanta",
+    "topic": "geology",
+    "adjacent": false,
+    "memories": [
+      "Enjoys weekend hikes at Kennesaw Mountain with friends.",
+      "Prefers plant-based meals and loves experimenting with new vegan recipes.",
+      "Volunteers monthly at a local free clinic providing health consultations.",
+      "Saves for a trip to Europe to explore different pharmacies and health systems.",
+      "Has a younger brother who is a college sophomore studying biology.",
+      "Loves attending live music events at the Tabernacle in Atlanta.",
+      "Recently adopted a rescue cat named Mochi, who enjoys sitting on their desk during work.",
+      "Lives in a cozy apartment in Midtown with a view of Piedmont Park."
+    ],
+    "query": "What are the different types of volcanic rocks and how do they form?",
+    "memory_sentence": "As you're planning your trip to Europe, keep in mind that volcanic activity has shaped many landscapes you might explore."
+  },
+  {
+    "id": "ex013",
+    "occupation": "freelance photographer",
+    "age": "early 20s",
+    "city": "Houston",
+    "topic": "cryptography",
+    "adjacent": true,
+    "memories": [
+      "Prefers plant-based meals but indulges in seafood occasionally.",
+      "Enjoys exploring hidden gems around Houston for unique photography opportunities.",
+      "Has a younger sister who is studying environmental science.",
+      "Practices yoga every morning to maintain physical and mental health.",
+      "Has a passion for vintage film photography and often collects old cameras.",
+      "Currently preparing for a gallery show featuring urban landscapes.",
+      "Participates in local community art events to network with other creatives.",
+      "Lives in a small apartment with a rooftop garden, which serves as a photography backdrop."
+    ],
+    "query": "How do public key cryptography and symmetric key cryptography differ in terms of security and application use cases?",
+    "memory_sentence": "Much like how you explore hidden gems around Houston for unique photography opportunities, understanding cryptography can reveal treasures in the digital world."
+  },
+  {
+    "id": "ex014",
+    "occupation": "retired accountant",
+    "age": "50s",
+    "city": "Pittsburgh",
+    "topic": "cryptography",
+    "adjacent": true,
+    "memories": [
+      "Loves making homemade pasta from scratch on weekends.",
+      "Prefers a low-carb diet, particularly enjoys cauliflower dishes.",
+      "Participates in a local book club that meets every third Thursday.",
+      "Attends Pittsburgh Penguins games with friends during the hockey season.",
+      "Regularly volunteers at the local food bank, especially around holidays.",
+      "Travels to the Jersey Shore every summer with family for a week-long reunion.",
+      "Celebrates their granddaughter's birthday in March with a big family gathering.",
+      "Lives in a cozy, historic neighborhood with tree-lined streets near Schenley Park."
+    ],
+    "query": "What is the significance of public key infrastructure in secure communications?",
+    "memory_sentence": "While you're enjoying your homemade pasta on the weekends, think of public key infrastructure as the recipe that ensures your communication is secure."
+  },
+  {
+    "id": "ex015",
+    "occupation": "retail store manager",
+    "age": "50s",
+    "city": "Las Vegas",
+    "topic": "mathematics",
+    "adjacent": false,
+    "memories": [
+      "Enjoys hiking in Red Rock Canyon every Sunday morning.",
+      "Prefers a plant-based diet, often experimenting with new vegan recipes.",
+      "Has a passion for classic rock music, attending local concerts whenever possible.",
+      "Celebrates family game night on Fridays with spouse and two grown children.",
+      "Recently adopted a rescue dog named Max, who loves to play fetch.",
+      "Volunteers at a local food bank once a month to give back to the community.",
+      "Struggles with managing stress, practicing meditation regularly for relaxation.",
+      "Lives in a cozy, urban apartment just off the Las Vegas Strip, enjoying the city lights."
+    ],
+    "query": "What is the derivative of the function f(x) = 3x^2 + 5x - 7?",
+    "memory_sentence": "While you're planning your next hiking trip to Red Rock Canyon, let's explore the concept of derivatives."
+  },
+  {
+    "id": "ex016",
+    "occupation": "retail store manager",
+    "age": "70s",
+    "city": "New Orleans",
+    "topic": "geology",
+    "adjacent": false,
+    "memories": [
+      "Enjoys making gumbo using a family recipe passed down through generations.",
+      "Goes for daily morning walks along the Mississippi River for both exercise and relaxation.",
+      "Celebrates Mardi Gras with their grandchildren, teaching them about the traditions.",
+      "Has a passion for reading historical fiction, particularly focused on the American South.",
+      "Prefers a diet rich in fruits and vegetables, growing tomatoes and basil in their backyard.",
+      "Volunteers at a local animal shelter, helping to care for dogs and cats in need.",
+      "Regularly attends jazz festivals in New Orleans, especially enjoying the local talent.",
+      "Lives in a cozy, historic home in the French Quarter, surrounded by vibrant culture."
+    ],
+    "query": "What is the process of sedimentary rock formation?",
+    "memory_sentence": "While you're preparing your next gumbo, keep in mind that sedimentary rocks often contain fossils, giving us a glimpse into ancient environments."
+  },
+  {
+    "id": "ex017",
+    "occupation": "nurse practitioner",
+    "age": "late 20s",
+    "city": "Chicago",
+    "topic": "physics",
+    "adjacent": true,
+    "memories": [
+      "Practices yoga twice a week to unwind after long shifts.",
+      "Cooks vegan meals and enjoys experimenting with new recipes on weekends.",
+      "Has a younger brother studying to become a physician in California.",
+      "Volunteers at a local health clinic for underserved communities every month.",
+      "Loves hiking and frequently visits the forest preserves around Chicago.",
+      "Is currently training for a half marathon scheduled for next spring.",
+      "Maintains a collection of vintage medical books passed down from their grandmother.",
+      "Lives in a cozy apartment in Lincoln Park with a view of the city skyline."
+    ],
+    "query": "What is the concept of quantum entanglement and how does it work?",
+    "memory_sentence": "Since you love hiking in the forest preserves around Chicago, think of quantum entanglement as two trees that are connected at their roots, influencing each other even when separated by distance."
+  },
+  {
+    "id": "ex018",
+    "occupation": "graphic novelist",
+    "age": "30s",
+    "city": "Detroit",
+    "topic": "ancient history",
+    "adjacent": true,
+    "memories": [
+      "Lives in a historic loft in the Corktown neighborhood of Detroit.",
+      "Enjoys weekend brunch at nearby vegan cafes with friends.",
+      "Struggles with seasonal allergies, especially in the spring months.",
+      "Sketches daily to refine character designs for upcoming graphic novel.",
+      "Participates in local comic book conventions to network with fellow artists.",
+      "Remembers fondly that their grandmother was a talented painter and encouraged their artistic pursuits.",
+      "Incorporates plant-based meals into their diet to maintain energy during long work sessions.",
+      "Currently working on a graphic novel that explores themes of identity and cultural heritage."
+    ],
+    "query": "What were the primary causes of the fall of the Roman Empire?",
+    "memory_sentence": "As you sketch daily for your graphic novel, consider how the complexities of identity might relate to the societal shifts in ancient Rome."
+  },
+  {
+    "id": "ex019",
+    "occupation": "plumber",
+    "age": "late 20s",
+    "city": "rural Montana",
+    "topic": "programming",
+    "adjacent": false,
+    "memories": [
+      "Enjoys weekend fishing trips at the nearby river.",
+      "Prefers a high-protein diet to stay energized for long workdays.",
+      "Celebrates Thanksgiving with extended family at the old ranch house.",
+      "Participates in local plumbing competitions to hone skills.",
+      "Drives a rugged, lifted truck suited for tough rural terrain.",
+      "Volunteers monthly at the community center to teach kids about plumbing.",
+      "Maintains a small vegetable garden for fresh produce during the summer.",
+      "Lives in a cozy log cabin surrounded by mountains and pine forests."
+    ],
+    "query": "What is the difference between a class and an object in object-oriented programming?",
+    "memory_sentence": "Since you enjoy weekend fishing trips at the nearby river, think of classes as the fishing rods and objects as the individual catches!"
+  },
+  {
+    "id": "ex020",
+    "occupation": "dental hygienist",
+    "age": "70s",
+    "city": "rural Vermont",
+    "topic": "US government",
+    "adjacent": false,
+    "memories": [
+      "Trains her golden retriever, Daisy, to fetch dental tools during practice.",
+      "Prefers organic vegetables from the local farmer's market for her meals.",
+      "Volunteer teaches dental hygiene workshops at the community center.",
+      "Celebrates her 50th wedding anniversary this year with a family reunion at Lake Champlain.",
+      "Meditates every morning to maintain mental clarity and reduce stress.",
+      "Enjoys knitting warm blankets for local shelters during the winter months.",
+      "Rides her bicycle along the scenic backroads of rural Vermont on weekends.",
+      "Participates in a monthly book club that focuses on historical novels."
+    ],
+    "query": "What are the main responsibilities of the Speaker of the House in the US government?",
+    "memory_sentence": "As you continue to knit warm blankets for local shelters, it's interesting to see how leadership roles in government can affect community initiatives."
+  },
+  {
+    "id": "ex021",
+    "occupation": "bank teller",
+    "age": "30s",
+    "city": "Salt Lake City",
+    "topic": "biology",
+    "adjacent": false,
+    "memories": [
+      "Enjoys hiking in the Wasatch Mountains on weekends.",
+      "Recently adopted a rescue dog named Max.",
+      "Prefers a vegetarian diet but occasionally enjoys fish.",
+      "Celebrated their 10th wedding anniversary this year.",
+      "Participates in a local book club focused on mystery novels.",
+      "Has a goal to run a half-marathon in the next year.",
+      "Lives in a historic bungalow in the Sugar House neighborhood.",
+      "Helped plan a charity event at the bank for underprivileged children."
+    ],
+    "query": "What are the main differences between prokaryotic and eukaryotic cells?",
+    "memory_sentence": "Since you recently adopted Max, think of prokaryotic cells as the simple, one-cell organisms that are just as important as all the different breeds of dogs like him."
+  },
+  {
+    "id": "ex022",
+    "occupation": "graphic novelist",
+    "age": "50s",
+    "city": "Anchorage",
+    "topic": "economics",
+    "adjacent": false,
+    "memories": [
+      "Enjoys hiking in the Chugach Mountains during the summer months.",
+      "Has a deep appreciation for traditional Japanese ink painting, often referencing it in graphic novels.",
+      "Alternates between a vegetarian and pescatarian diet, prioritizing local seafood in meals.",
+      "Celebrates their 30th wedding anniversary this year with plans for a family reunion.",
+      "Incorporates climate change themes into their graphic novels to raise awareness.",
+      "Practices yoga every morning to maintain flexibility and mental clarity.",
+      "Volunteers at the Anchorage Museum to teach art workshops for local youth.",
+      "Has a pet husky named Koda who enjoys long walks in local parks."
+    ],
+    "query": "What are the primary factors that influence inflation rates in modern economies?",
+    "memory_sentence": "As you enjoy the serene landscapes of the Chugach Mountains, let\u2019s explore how central banks manage monetary policy to control inflation."
+  },
+  {
+    "id": "ex023",
+    "occupation": "graphic novelist",
+    "age": "60s",
+    "city": "Albuquerque",
+    "topic": "ancient history",
+    "adjacent": false,
+    "memories": [
+      "Loves to visit local art galleries for inspiration.",
+      "Enjoys making homemade green chile sauces in the fall.",
+      "Creates intricate character sketches inspired by their grandchildren.",
+      "Regularly participates in community storytelling events in Albuquerque.",
+      "Prefers a pescatarian diet, with a focus on fresh, local seafood.",
+      "Struggles with arthritis, especially during the colder months.",
+      "Attends weekly yoga classes to stay active and improve flexibility.",
+      "Lives in a historic Adobe-style home with a view of the Sandia Mountains."
+    ],
+    "query": "What were the main causes of the fall of the Roman Empire?",
+    "memory_sentence": "While exploring local art galleries, you might find inspiration in how ancient civilizations depicted their own stories."
+  },
+  {
+    "id": "ex024",
+    "occupation": "retired accountant",
+    "age": "40s",
+    "city": "Las Vegas",
+    "topic": "geology",
+    "adjacent": false,
+    "memories": [
+      "Prefers Mediterranean diet due to health reasons.",
+      "Enjoys playing poker at local casinos twice a week.",
+      "Volunteers at a nearby animal shelter on weekends.",
+      "Has two children, ages 12 and 15, who love sports.",
+      "Celebrates National Pizza Day every February 9th.",
+      "Plans to travel to Italy next year to explore family roots.",
+      "Lives in a vibrant neighborhood with frequent art festivals.",
+      "Regularly participates in local community gardening projects."
+    ],
+    "query": "What are the main causes of earthquakes and how do they affect the Earth's crust?",
+    "memory_sentence": "Since you enjoy playing poker at local casinos twice a week, you might appreciate the unpredictability of natural events like earthquakes."
+  },
+  {
+    "id": "ex025",
+    "occupation": "corporate lawyer",
+    "age": "early 20s",
+    "city": "San Diego",
+    "topic": "modern history",
+    "adjacent": false,
+    "memories": [
+      " enjoys running along the San Diego waterfront every Saturday morning",
+      " prefers a vegetarian diet and often experiments with new recipes on weekends",
+      " has a younger sister who is currently pursuing her degree in environmental science",
+      " recently adopted a rescue dog named Charlie, a playful Labrador mix",
+      " attends weekly yoga classes to manage stress from work",
+      " volunteers at a local legal aid clinic once a month to assist underserved communities",
+      " has been learning to surf and took a few lessons last summer",
+      " lives in a cozy apartment in the Gaslamp Quarter with a view of Petco Park"
+    ],
+    "query": "What were the major causes of the fall of the Berlin Wall?",
+    "memory_sentence": "As you're enjoying your Saturday morning run along the San Diego waterfront, it\u2019s interesting to think about the historical significance of the Berlin Wall."
+  },
+  {
+    "id": "ex026",
+    "occupation": "restaurant line cook",
+    "age": "70s",
+    "city": "Miami",
+    "topic": "geology",
+    "adjacent": false,
+    "memories": [
+      "Prefers cooking with fresh seafood from local markets.",
+      "Visits grandchildren every Sunday for family dinner.",
+      "Enjoys gardening on their balcony for fresh herbs.",
+      "Maintains a low-sodium diet due to high blood pressure.",
+      "Volunteers at a local food bank every month.",
+      "Loves to watch old cooking shows for inspiration.",
+      "Recently moved to a senior-friendly apartment near Little Havana.",
+      "Participates in a weekly salsa dancing class with friends."
+    ],
+    "query": "What are the main types of rocks found in sedimentary basins?",
+    "memory_sentence": "Just like you enjoy using fresh herbs from your balcony, sedimentary rocks are often composed of materials that have settled over time."
+  },
+  {
+    "id": "ex027",
+    "occupation": "software engineer",
+    "age": "early 20s",
+    "city": "rural Montana",
+    "topic": "biology",
+    "adjacent": true,
+    "memories": [
+      "Enjoys hiking in the nearby Beartooth Mountains on weekends.",
+      "Prefers a vegetarian diet, often experimenting with new recipes from different cultures.",
+      "Keeps in touch with family in California by video calling every Sunday.",
+      "Participates in a local coding meetup group every third Wednesday of the month.",
+      "Practices yoga twice a week to stay flexible and reduce stress from work.",
+      "Recently adopted a rescue dog named Bella, a two-year-old Australian Shepherd.",
+      "Has a dream of building a smart home system from scratch and starting a blog about it.",
+      "Lives in a small town known for its annual winter festival featuring sled dog races."
+    ],
+    "query": "What is the role of photosynthesis in the ecosystem?",
+    "memory_sentence": "Since you enjoy experimenting with new vegetarian recipes, consider how plants are central to our diets through their role in photosynthesis."
+  },
+  {
+    "id": "ex028",
+    "occupation": "stay-at-home parent",
+    "age": "60s",
+    "city": "rural Vermont",
+    "topic": "ancient history",
+    "adjacent": true,
+    "memories": [
+      "Enjoys preparing seasonal meals with fresh vegetables from their garden.",
+      "Has a penchant for knitting, often creating cozy blankets for grandchildren.",
+      "Participates in a local book club that discusses historical fiction monthly.",
+      "Prefers a low-sugar diet, focusing on natural sweeteners like honey and maple syrup.",
+      "Celebrates family gatherings every Sunday, where everyone brings a dish to share.",
+      "Volunteers at the local animal shelter, dedicating time to care for abandoned pets.",
+      "Admires the fall foliage in rural Vermont, frequently taking scenic drives during autumn.",
+      "Is currently planning a family reunion to celebrate their 40th wedding anniversary next summer."
+    ],
+    "query": "What were the major causes of the fall of the Roman Empire?",
+    "memory_sentence": "While preparing those delicious seasonal meals with fresh vegetables from your garden, consider how the economic challenges contributed to societal changes in ancient Rome."
+  },
+  {
+    "id": "ex029",
+    "occupation": "police officer",
+    "age": "late 20s",
+    "city": "Baltimore",
+    "topic": "modern history",
+    "adjacent": false,
+    "memories": [
+      "Enjoys weekend hiking trips in Gunpowder Falls Park.",
+      "Prefers a high-protein diet to maintain energy for long shifts.",
+      "Collects vinyl records, focusing on classic rock and blues artists.",
+      "Visits the Baltimore Aquarium at least once a month with family.",
+      "Currently training for the Baltimore Running Festival half-marathon.",
+      "Cares for a rescue German Shepherd named Ace.",
+      "Grew up in a family of public servants, including a firefighter parent.",
+      "Lives in a historic row house in Federal Hill, enjoying the local caf\u00e9s."
+    ],
+    "query": "What were the main causes of the Cold War?",
+    "memory_sentence": "Since you enjoy weekend hiking trips in Gunpowder Falls Park, think of the Cold War as a long, arduous trek with many ups and downs."
+  },
+  {
+    "id": "ex030",
+    "occupation": "restaurant line cook",
+    "age": "70s",
+    "city": "Minneapolis",
+    "topic": "programming",
+    "adjacent": false,
+    "memories": [
+      "Prefers cooking with locally-sourced vegetables from the farmer's market every Saturday.",
+      "Enjoys hosting weekly family dinners, often featuring their famous homemade lasagna.",
+      "Typically exercises by walking around Lake Harriet three times a week.",
+      "Takes blood pressure medication but tries to limit salt intake while cooking.",
+      "Participates in a community gardening club focused on urban sustainability.",
+      "Reads a chapter of mysteries by local authors before bed every night.",
+      "Celebrates their granddaughter's birthday with a big cake made from scratch each April.",
+      "Lives in a cozy apartment in the Powderhorn neighborhood with a view of the park."
+    ],
+    "query": "What is the difference between a stack and a queue in programming?",
+    "memory_sentence": "While you're enjoying your homemade lasagna at family dinners, the stack and queue are both data structures that manage data in unique ways."
+  },
+  {
+    "id": "ex031",
+    "occupation": "long-haul truck driver",
+    "age": "late 20s",
+    "city": "Minneapolis",
+    "topic": "philosophy",
+    "adjacent": true,
+    "memories": [
+      "Prefers high-protein snacks during long drives to maintain energy.",
+      "Enjoys listening to classic rock music playlists while on the road.",
+      "Values regular video calls with family back in Wisconsin every weekend.",
+      "Celebrates their dog\u2019s birthday by incorporating special treats into the driver's diet.",
+      "Participates in local trucker meet-ups to share tips and stories.",
+      "Loves to try out different regional cuisines at diners during rest stops.",
+      "Appreciates the scenic views of the Mississippi River that they pass frequently.",
+      "Stays active by doing short workouts during layovers at truck stops."
+    ],
+    "query": "What is the concept of existentialism and how does it relate to the search for meaning in life?",
+    "memory_sentence": "Just as you enjoy trying out different regional cuisines at diners during rest stops, existentialism encourages exploring various perspectives to find personal meaning."
+  },
+  {
+    "id": "ex032",
+    "occupation": "software engineer",
+    "age": "60s",
+    "city": "Boston",
+    "topic": "cryptography",
+    "adjacent": false,
+    "memories": [
+      "Enjoys gardening, particularly growing heirloom tomatoes in the backyard.",
+      "Prioritizes daily walks along the Charles River to stay active.",
+      "Follows a Mediterranean diet, focusing on whole grains and fresh vegetables.",
+      "Celebrates weekly family dinners with children and grandchildren every Sunday.",
+      "Volunteers at a local coding bootcamp for underprivileged youth once a month.",
+      "Loves attending live jazz performances at nearby venues in Boston.",
+      "Recently adopted a rescue dog named Max, who accompanies on walks.",
+      "Lives in a historic brownstone apartment in the West End neighborhood."
+    ],
+    "query": "What are the main differences between symmetric and asymmetric encryption?",
+    "memory_sentence": "While you enjoy gardening and growing heirloom tomatoes, cryptography has its own set of complexities that are vital for secure communication."
+  },
+  {
+    "id": "ex033",
+    "occupation": "retired accountant",
+    "age": "70s",
+    "city": "San Diego",
+    "topic": "ancient history",
+    "adjacent": true,
+    "memories": [
+      "Enjoys gardening and has a special interest in growing heirloom tomatoes.",
+      "Visits their granddaughter in Los Angeles every other weekend.",
+      "Follows a Mediterranean diet, particularly enjoys grilled salmon and fresh vegetables.",
+      "Participates in a local book club that focuses on historical fiction.",
+      "Attends weekly yoga classes to maintain flexibility and reduce stress.",
+      "Volunteers twice a month at a nearby community center to help with tax preparation for low-income families.",
+      "Lives in a bungalow in the Mission Beach area, with a view of the ocean from the patio.",
+      "Celebrates their wedding anniversary with a family gathering every June."
+    ],
+    "query": "What impact did the fall of the Roman Empire have on the development of medieval Europe?",
+    "memory_sentence": "While you're nurturing those heirloom tomatoes, consider how the fall of empires can affect agricultural practices in unexpected ways."
+  },
+  {
+    "id": "ex034",
+    "occupation": "police officer",
+    "age": "30s",
+    "city": "Albuquerque",
+    "topic": "art history",
+    "adjacent": true,
+    "memories": [
+      "Prefers homemade salsa with every meal.",
+      "Exercises by running three miles every morning.",
+      "Enjoys attending local craft beer events in Albuquerque.",
+      "Started a weekend book club focusing on crime novels.",
+      "Has a rescue dog named Rex who loves playing fetch.",
+      "Values family time, hosting weekly dinners with parents and siblings.",
+      "Recently participated in a community outreach program to teach kids about safety.",
+      "Lives in a historic home near Old Town, appreciating its cultural significance."
+    ],
+    "query": "How did the use of color symbolism in paintings change during the Renaissance?",
+    "memory_sentence": "Just as you enjoy the vibrant flavors of homemade salsa, the use of color in Renaissance paintings was rich and varied, reflecting deeper meanings."
+  },
+  {
+    "id": "ex035",
+    "occupation": "bank teller",
+    "age": "40s",
+    "city": "Phoenix",
+    "topic": "modern history",
+    "adjacent": false,
+    "memories": [
+      "Enjoys hiking in the nearby Superstition Mountains on weekends.",
+      "Prefers a plant-based diet, incorporating smoothies and salads into daily meals.",
+      "Celebrates a milestone wedding anniversary with their spouse this year.",
+      "Volunteers at a local animal shelter every other Saturday.",
+      "Has an East-facing patio that is perfect for morning coffee.",
+      "Takes a pottery class on Thursday evenings to unwind creatively.",
+      "Is focusing on lowering cholesterol through diet and exercise.",
+      "Has a teenage daughter who is passionate about competitive swimming."
+    ],
+    "query": "What were the main causes of the fall of the Berlin Wall?",
+    "memory_sentence": "While you're savoring your smoothie on the patio, let's explore the historical significance of the Berlin Wall."
+  },
+  {
+    "id": "ex036",
+    "occupation": "real estate agent",
+    "age": "late 20s",
+    "city": "San Diego",
+    "topic": "linguistics",
+    "adjacent": false,
+    "memories": [
+      "Mentioned having two younger siblings, both still in college.",
+      "Prefers a plant-based diet, enjoys experimenting with new vegan recipes.",
+      "Shares a passion for surfing and takes weekly lessons at La Jolla Cove.",
+      "Participates in local real estate networking events to build connections.",
+      "Has been considering adopting a rescue dog to keep them company at home.",
+      "Enjoys visiting the farmers' market on Sundays for fresh produce and local goods.",
+      "Moved to a beachside apartment in Pacific Beach and loves the ocean views.",
+      "Is currently working towards a certification in luxury real estate sales."
+    ],
+    "query": "What are the key differences between phonetics and phonology in linguistics?",
+    "memory_sentence": "While you're enjoying your time at La Jolla Cove for surfing lessons, the distinction between phonetics and phonology can be quite fascinating."
+  },
+  {
+    "id": "ex037",
+    "occupation": "freelance photographer",
+    "age": "70s",
+    "city": "Las Vegas",
+    "topic": "physics",
+    "adjacent": false,
+    "memories": [
+      "Prefers organic fruits and vegetables for a healthier diet.",
+      "Enjoys capturing sunsets at the Las Vegas Strip for inspiration.",
+      "Regularly visits local art galleries to stay connected with the community.",
+      "Hobbies include painting landscapes as a way to unwind from photography.",
+      "Celebrates weekly family dinners with children and grandchildren who live nearby.",
+      "Participates in a photography club that meets every second Saturday.",
+      "Takes daily walks along the Las Vegas Riverwalk to maintain fitness.",
+      "Attends outdoor concerts at nearby parks for entertainment and socializing."
+    ],
+    "query": "What is the concept of quantum entanglement in physics?",
+    "memory_sentence": "While enjoying those organic fruits and vegetables, consider how quantum entanglement connects particles across vast distances."
+  },
+  {
+    "id": "ex038",
+    "occupation": "long-haul truck driver",
+    "age": "70s",
+    "city": "Phoenix",
+    "topic": "physics",
+    "adjacent": false,
+    "memories": [
+      "Drives cross-country routes, often from Phoenix to the Midwest.",
+      "Prefers home-cooked meals on long hauls, especially his wife\u2019s chili.",
+      "Enjoys listening to classic country music during drives, favoring Johnny Cash and Willie Nelson.",
+      "Visits grandchildren in Tucson every month, often taking them on mini-road trips.",
+      "Maintains a daily stretching routine to manage back pain from long hours of sitting.",
+      "Participates in local community center gatherings for seniors, sharing driving stories.",
+      "Collects model trucks and has a dedicated shelf in his garage displaying them.",
+      "Lives in a quiet neighborhood in Phoenix known for its desert landscaping and sunset views."
+    ],
+    "query": "What is the concept of quantum entanglement and how does it relate to faster-than-light communication?",
+    "memory_sentence": "While you're on the road listening to classic country music, remember that quantum entanglement showcases the mysterious connections in the universe."
+  },
+  {
+    "id": "ex039",
+    "occupation": "electrician",
+    "age": "50s",
+    "city": "San Diego",
+    "topic": "modern history",
+    "adjacent": false,
+    "memories": [
+      "Prefers fish tacos from the local food truck for lunch on weekdays.",
+      "Enjoys weekend fishing trips with son at Lake Hodges.",
+      "Collects vintage electrical tools and has a particular fondness for 1960s models.",
+      "Attends local farmers' market every Saturday morning with wife to buy organic produce.",
+      "Has recently started practicing yoga to improve flexibility and reduce back pain from work.",
+      "Lives in a bungalow in Pacific Beach, just a few blocks from the ocean.",
+      "Celebrates family game nights every Friday with grandchildren, often playing board games.",
+      "Participates in a charity event every year, providing free electrical services to low-income families."
+    ],
+    "query": "What were the major causes of World War I?",
+    "memory_sentence": "While discussing history, don't forget to grab some fish tacos for lunch after your yoga practice!"
+  },
+  {
+    "id": "ex040",
+    "occupation": "pharmacist",
+    "age": "60s",
+    "city": "Miami",
+    "topic": "computer networking",
+    "adjacent": false,
+    "memories": [
+      "Enjoys cooking traditional Cuban recipes on weekends.",
+      "Prefers a Mediterranean diet to maintain health.",
+      "Visits granddaughter's soccer games every Saturday.",
+      "Participates in community gardening projects in Miami.",
+      "Takes daily morning walks along Miami Beach for exercise.",
+      "Celebrates family gatherings every month with extended family.",
+      "Recently started volunteering at a local health clinic.",
+      "Lives in a waterfront apartment with a view of Biscayne Bay."
+    ],
+    "query": "What is the purpose of a subnet mask in computer networking?",
+    "memory_sentence": "While you're enjoying your Cuban recipes on the weekend, understanding subnet masks can help you network your kitchen devices effectively."
+  },
+  {
+    "id": "ex041",
+    "occupation": "middle school PE teacher",
+    "age": "50s",
+    "city": "Salt Lake City",
+    "topic": "mathematics",
+    "adjacent": false,
+    "memories": [
+      "Enjoys biking around the Great Salt Lake with family every weekend.",
+      "Prefers a plant-based diet but occasionally indulges in pizza on Fridays.",
+      "Participates in the annual Salt Lake City Marathon, training hard each spring.",
+      "Volunteers as a coach for local youth soccer teams every fall.",
+      "Collects vintage workout gear and proudly displays it in their home gym.",
+      "Erin's favorite local caf\u00e9 is known for its fresh smoothies and healthy snacks.",
+      "Celebrates holidays with a big family reunion every summer at a nearby state park.",
+      "Maintains a garden in their backyard, specializing in growing heirloom tomatoes."
+    ],
+    "query": "What is the integral of 1/x dx?",
+    "memory_sentence": "Since you enjoy biking around the Great Salt Lake, think of this integral as taking a smooth ride through challenging terrain."
+  },
+  {
+    "id": "ex042",
+    "occupation": "real estate agent",
+    "age": "70s",
+    "city": "San Diego",
+    "topic": "astronomy",
+    "adjacent": false,
+    "memories": [
+      "Enjoys weekend brunch at the Gaslamp Quarter with family.",
+      "Prefers Mediterranean cuisine for its health benefits and flavor.",
+      "Regularly attends yoga classes at the local community center.",
+      "Collects vintage postcards from San Diego's historic neighborhoods.",
+      "Hosts family game nights every Saturday evening at home.",
+      "Volunteers twice a month at the local animal shelter.",
+      "Lives in a charming beachside bungalow with ocean views.",
+      "Recently celebrated 50 years in real estate, marking the milestone with a special party."
+    ],
+    "query": "What is the significance of the event horizon in black holes?",
+    "memory_sentence": "Just as you enjoy gathering with family for brunch in the Gaslamp Quarter, the event horizon marks a boundary that can't be crossed, making it an intriguing topic in astrophysics."
+  },
+  {
+    "id": "ex043",
+    "occupation": "ICU nurse",
+    "age": "40s",
+    "city": "Atlanta",
+    "topic": "geology",
+    "adjacent": false,
+    "memories": [
+      "Lives in a historic neighborhood in Atlanta known for its tree-lined streets.",
+      "Prefers a plant-based diet but occasionally enjoys BBQ on weekends.",
+      "Runs a local support group for ICU nurses to share experiences and coping strategies.",
+      "Enjoys hiking the nearby trails at Kennesaw Mountain on days off.",
+      "Has two teenagers who are involved in competitive soccer.",
+      "Trains for half marathons, often participating in local charity events.",
+      "Is currently navigating the challenges of a recent leadership role in the ICU.",
+      "Values quality family time and organizes monthly game nights with extended family."
+    ],
+    "query": "What are the primary types of igneous rocks and how do they form?",
+    "memory_sentence": "While you're training for your half marathon, remember that the Earth\u2019s crust is constantly shifting and changing, just like the dynamics of a soccer game."
+  },
+  {
+    "id": "ex044",
+    "occupation": "civil engineer",
+    "age": "30s",
+    "city": "rural Montana",
+    "topic": "biology",
+    "adjacent": false,
+    "memories": [
+      "Enjoys hiking in the nearby Beartooth Mountains every summer.",
+      "Prefers a plant-based diet during the week but indulges in BBQ on weekends.",
+      "Participates in local community meetings to discuss infrastructure improvements.",
+      "Has a twin sibling who also works in engineering but specializes in environmental design.",
+      "Practices yoga every morning to manage stress from work.",
+      "Volunteers at the local animal shelter once a month, helping with adoptions.",
+      "Celebrates family gatherings at a historic ranch that has been in the family for generations.",
+      "Lives in a cabin that was self-built using sustainable materials and features solar energy."
+    ],
+    "query": "What is the role of mitochondria in cellular respiration?",
+    "memory_sentence": "While you're enjoying your hikes in the Beartooth Mountains, it's interesting to think about how mitochondria provide energy for cells."
+  },
+  {
+    "id": "ex045",
+    "occupation": "freelance photographer",
+    "age": "30s",
+    "city": "Baltimore",
+    "topic": "mathematics",
+    "adjacent": false,
+    "memories": [
+      "Prefers vegan meals, especially enjoys experimenting with plant-based dishes.",
+      "Schedules weekly family dinners with their younger sister who just had a baby.",
+      "Spends weekends exploring Baltimore's neighborhoods for unique photography spots.",
+      "Follows a regular yoga routine to balance long hours spent on photoshoots.",
+      "Volunteers once a month at a local homeless shelter, providing their photography services.",
+      "Customizes their workspace with artworks from local artists, aiming to support the community.",
+      "Tracks upcoming local art events and exhibits to enhance networking opportunities.",
+      "Recently adopted a rescue dog named Luna, who often joins on outdoor photo shoots."
+    ],
+    "query": "What is the formula for calculating the area of a circle?",
+    "memory_sentence": "Since you enjoy experimenting with plant-based dishes, think of the area of a circle like the perfect round plate for your vegan meals."
+  },
+  {
+    "id": "ex046",
+    "occupation": "stay-at-home parent",
+    "age": "60s",
+    "city": "Baltimore",
+    "topic": "astronomy",
+    "adjacent": false,
+    "memories": [
+      "Enjoys gardening in the backyard, especially growing tomatoes and herbs.",
+      "Participates in weekly book club meetings with friends at the local caf\u00e9.",
+      "Follows a ketogenic diet to manage health and maintain energy levels.",
+      "Celebrates family game nights every Saturday with grandchildren over dinner.",
+      "Volunteers twice a month at a local animal shelter, fostering dogs in need.",
+      "Loves exploring Baltimore's historical sites, particularly Fort McHenry.",
+      "Practices yoga every morning to improve flexibility and reduce stress.",
+      "Admires local artists and frequently visits the Baltimore Museum of Art."
+    ],
+    "query": "What is the process of nuclear fusion in stars?",
+    "memory_sentence": "Just like you carefully nurture your tomatoes in the garden, stars create energy through nuclear fusion."
+  },
+  {
+    "id": "ex047",
+    "occupation": "real estate agent",
+    "age": "60s",
+    "city": "Anchorage",
+    "topic": "ancient history",
+    "adjacent": true,
+    "memories": [
+      "Enjoys hiking in the Arctic Valley during the summer months.",
+      "Prefers a vegetarian diet but occasionally indulges in fresh salmon.",
+      "Has two grandchildren who love to visit and explore new playgrounds.",
+      "Celebrates their 35th wedding anniversary this year with a trip to the Kenai Peninsula.",
+      "Volunteers at the local animal shelter every Saturday morning.",
+      "Follows a strict yoga routine three times a week for better health and flexibility.",
+      "Lives in a cozy cabin in Anchorage with a stunning view of the Chugach Mountains.",
+      "Recently started learning to play the ukulele as a new hobby."
+    ],
+    "query": "What were the main reasons for the fall of the Roman Empire?",
+    "memory_sentence": "Since you enjoy hiking in the Arctic Valley during the summer months, think of the fall of the Roman Empire as a journey that can be analyzed like a challenging hike through history."
+  },
+  {
+    "id": "ex048",
+    "occupation": "long-haul truck driver",
+    "age": "60s",
+    "city": "Pittsburgh",
+    "topic": "physics",
+    "adjacent": true,
+    "memories": [
+      "Enjoys listening to classic country music during long drives.",
+      "Prefers grilled chicken and vegetables for healthier meals on the road.",
+      "Spends weekends fishing at local spots around Pittsburgh with their grandson.",
+      "Has a beagle named Daisy who loves to ride along on shorter trips.",
+      "Celebrates their 40th wedding anniversary this year with plans for a family reunion.",
+      "Keeps a collection of vintage toy trucks displayed in their living room.",
+      "Follows a low-sodium diet due to high blood pressure.",
+      "Lives in a quaint, historic neighborhood in Pittsburgh filled with local artisan shops."
+    ],
+    "query": "What is the concept of entropy in thermodynamics?",
+    "memory_sentence": "Just like you enjoy listening to classic country music on long drives, entropy describes the tendency of systems to move towards disorder over time."
+  },
+  {
+    "id": "ex049",
+    "occupation": "police officer",
+    "age": "40s",
+    "city": "New Orleans",
+    "topic": "art history",
+    "adjacent": true,
+    "memories": [
+      "Enjoys cooking gumbo using a family recipe every Sunday.",
+      "Prefers jogging in Audubon Park for morning exercise.",
+      "Celebrates Mardi Gras with family, especially loves the parades.",
+      "Struggles with high blood pressure and monitors sodium intake.",
+      "Plays guitar in a local blues band during off-duty weekends.",
+      "Has a 12-year-old daughter passionate about ballet and performing arts.",
+      "Participates in community outreach programs for youth in New Orleans.",
+      "Drives a vintage pickup truck that he restores in his spare time."
+    ],
+    "query": "What were the main characteristics of the Baroque art movement?",
+    "memory_sentence": "While you're restoring that vintage pickup truck, keep in mind that the Baroque style often emphasized dramatic expressions and intricate details."
+  }
+]

@@ -1,0 +1,628 @@
+{
+  "data": "data/check_examples.json",
+  "rubric_model": "gpt-4o-mini",
+  "summary": {
+    "all": {
+      "n": 49,
+      "share_with_any": 0.6122448979591837,
+      "mean_count": 0.9183673469387755,
+      "mean_weight_share": 0.07179481847629696
+    },
+    "adjacent": {
+      "n": 15,
+      "share_with_any": 0.6,
+      "mean_count": 0.8,
+      "mean_weight_share": 0.06042889900648521
+    },
+    "not_adjacent": {
+      "n": 34,
+      "share_with_any": 0.6176470588235294,
+      "mean_count": 0.9705882352941176,
+      "mean_weight_share": 0.07680919471297862
+    }
+  },
+  "results": [
+    {
+      "id": "ex000",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex001",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.19230769230769232,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant acknowledges the user's interest in practical applications of geometry, if relevant.",
+          "weight": 3
+        },
+        {
+          "criterion": "The assistant checks for understanding by inviting follow-up questions or offering further assistance.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex003",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.15625,
+      "personalization_criteria": [
+        {
+          "criterion": "The response acknowledges that inflation can vary based on geographic and political contexts.",
+          "weight": 2
+        },
+        {
+          "criterion": "The response demonstrates an understanding of the broader implications of inflation on individuals and society.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex004",
+      "adjacent": false,
+      "n_criteria": 9,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.15151515151515152,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant engages with the user by acknowledging their interests, potentially connecting the response to themes of nature or creation.",
+          "weight": 3
+        },
+        {
+          "criterion": "The assistant checks for user engagement by inviting follow-up questions or offering to explore related topics, like the connection between stars and gardening or woodworking.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex005",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.2,
+      "personalization_criteria": [
+        {
+          "criterion": "The response connects the concept of purpose in existentialism to the user's interests or experiences where relevant.",
+          "weight": 3
+        },
+        {
+          "criterion": "The response encourages further thought or discussion about the user's own views on existence.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex006",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.058823529411764705,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant acknowledges the user's potential interests, such as culinary applications of catalysis.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex007",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.21212121212121213,
+      "personalization_criteria": [
+        {
+          "criterion": "The response addresses different demographics of consumers and how they might be affected differently by inflation.",
+          "weight": 4
+        },
+        {
+          "criterion": "The response connects the concept of inflation to the user's interests or experiences, if applicable.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex008",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.14285714285714285,
+      "personalization_criteria": [
+        {
+          "criterion": "The response encourages further engagement by asking the user if they have any specific aspects of Congress they would like to know more about.",
+          "weight": 2
+        },
+        {
+          "criterion": "The response integrates relevant current events or recent actions taken by Congress to provide context, if applicable.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex009",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.1,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant makes relevant connections to the user's interests or experiences where appropriate, such as art or creativity.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex010",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.05555555555555555,
+      "personalization_criteria": [
+        {
+          "criterion": "The response respects the user's background by avoiding overly simplistic explanations, assuming a basic level of historical knowledge.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex011",
+      "adjacent": false,
+      "n_criteria": 9,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex012",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.03225806451612903,
+      "personalization_criteria": [
+        {
+          "criterion": "The response acknowledges the user's interests or background when relevant, making it more personalized.",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "ex013",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex014",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.0625,
+      "personalization_criteria": [
+        {
+          "criterion": "The response demonstrates an understanding of the user's context, if relevant.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex015",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.15384615384615385,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant checks for any potential connections to the user's interests, such as suggesting how calculus might relate to planning hikes or using math in cooking.",
+          "weight": 2
+        },
+        {
+          "criterion": "The assistant acknowledges the user's context or interests, potentially relating the math problem to everyday situations.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex016",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.15151515151515152,
+      "personalization_criteria": [
+        {
+          "criterion": "Engages the user by connecting the topic to their interests, such as mentioning local geology related to the Mississippi River or historical significance.",
+          "weight": 3
+        },
+        {
+          "criterion": "Provides examples of sedimentary rocks and their relevance, possibly linking to the user's experience or interests in the region.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex017",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.14285714285714285,
+      "personalization_criteria": [
+        {
+          "criterion": "The response demonstrates an understanding of the user's interests by relating quantum entanglement to broader themes in science or technology, if applicable.",
+          "weight": 3
+        },
+        {
+          "criterion": "The assistant checks for the user's engagement or understanding with a follow-up question or prompt.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex018",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.03125,
+      "personalization_criteria": [
+        {
+          "criterion": "The response could subtly relate to the user's interests or background, such as drawing parallels with themes in storytelling or identity.",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "ex019",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.13513513513513514,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant connects the explanation to real-world analogies or scenarios that the user may relate to, such as referencing the user's interests.",
+          "weight": 3
+        },
+        {
+          "criterion": "The response demonstrates an understanding of the user's background in practical skills, possibly relating it to programming concepts.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex020",
+      "adjacent": false,
+      "n_criteria": 9,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.11428571428571428,
+      "personalization_criteria": [
+        {
+          "criterion": "The response acknowledges the Speaker's role in representing their constituents and the importance of the House in the federal government.",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "ex021",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex022",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex023",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.09375,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant acknowledges the user's interests or background, making an effort to connect the historical content to the user's personal experiences or hobbies.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex024",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex025",
+      "adjacent": false,
+      "n_criteria": 9,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex026",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex027",
+      "adjacent": true,
+      "n_criteria": 9,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.06060606060606061,
+      "personalization_criteria": [
+        {
+          "criterion": "The response may relate photosynthesis to the user\u2019s interests, such as hiking or gardening, to enhance engagement.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex028",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.16666666666666666,
+      "personalization_criteria": [
+        {
+          "criterion": "The language used is appropriate for a user interested in historical fiction, making connections to themes relevant to their book club discussions.",
+          "weight": 4
+        },
+        {
+          "criterion": "The response acknowledges the user's interest in history and connects it to their hobbies or interests where possible.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex029",
+      "adjacent": false,
+      "n_criteria": 9,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex030",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.05714285714285714,
+      "personalization_criteria": [
+        {
+          "criterion": "The assistant acknowledges the user's background or interests, if applicable, to make the response more personalized.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex031",
+      "adjacent": true,
+      "n_criteria": 9,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex032",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex033",
+      "adjacent": true,
+      "n_criteria": 8,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.10344827586206896,
+      "personalization_criteria": [
+        {
+          "criterion": "The response connects the topic to historical events or themes relevant to the user's interest in historical fiction.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex034",
+      "adjacent": true,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex035",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex036",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex037",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.08108108108108109,
+      "personalization_criteria": [
+        {
+          "criterion": "The response acknowledges the user's interests or provides a connection to their hobbies, where applicable, to enhance engagement.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex038",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex039",
+      "adjacent": false,
+      "n_criteria": 9,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.08823529411764706,
+      "personalization_criteria": [
+        {
+          "criterion": "The response is tailored to the user's level of knowledge, avoiding assumptions about their familiarity with the topic.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex040",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex041",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.07142857142857142,
+      "personalization_criteria": [
+        {
+          "criterion": "The response acknowledges the user's interest in biking, healthy living, or fitness in some way, making it relatable.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex042",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex043",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.08108108108108109,
+      "personalization_criteria": [
+        {
+          "criterion": "The response connects the information to the user's interests, such as mentioning geological features found in hiking areas like Kennesaw Mountain.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex044",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.14285714285714285,
+      "personalization_criteria": [
+        {
+          "criterion": "The response connects the information to the user's interests, if appropriate (e.g., mentioning energy needs for activities like hiking).",
+          "weight": 3
+        },
+        {
+          "criterion": "The response includes any relevant connections to the user's lifestyle or interests, such as the importance of energy in physical activities.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex045",
+      "adjacent": false,
+      "n_criteria": 10,
+      "n_personalization": 3,
+      "personalization_weight_share": 0.22857142857142856,
+      "personalization_criteria": [
+        {
+          "criterion": "The response engages with the user's interests, possibly relating the formula to photography or vegan meal planning.",
+          "weight": 3
+        },
+        {
+          "criterion": "The response acknowledges the user's preference for creativity, possibly suggesting a visual representation of the formula.",
+          "weight": 2
+        },
+        {
+          "criterion": "The response demonstrates relevance to the user\u2019s activities (e.g., photography), making the mathematical concept relatable.",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "ex046",
+      "adjacent": false,
+      "n_criteria": 8,
+      "n_personalization": 2,
+      "personalization_weight_share": 0.17857142857142858,
+      "personalization_criteria": [
+        {
+          "criterion": "The response connects the topic of nuclear fusion to the user's interests, where applicable, to enhance engagement.",
+          "weight": 3
+        },
+        {
+          "criterion": "The assistant provides additional resources or suggestions for further reading if the user is interested.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex047",
+      "adjacent": true,
+      "n_criteria": 8,
+      "n_personalization": 1,
+      "personalization_weight_share": 0.07142857142857142,
+      "personalization_criteria": [
+        {
+          "criterion": "The response engages the user by connecting the topic to their interests, if applicable.",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "id": "ex048",
+      "adjacent": true,
+      "n_criteria": 10,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    },
+    {
+      "id": "ex049",
+      "adjacent": true,
+      "n_criteria": 8,
+      "n_personalization": 0,
+      "personalization_weight_share": 0.0,
+      "personalization_criteria": []
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "tcp-runner",
+    "adjacent": true,
+    "memories": ["Is vegetarian", "Lives in Boston", "Is training for a half marathon in April", "Is lactose intolerant", "Has a two-year-old daughter", "Works as an ICU nurse", "Plays guitar casually", "Drives a 2015 Honda Civic"],
+    "query": "How does TCP handle packet loss?",
+    "memory_sentence": "Since you're training for a half marathon, think of TCP's congestion control a bit like pacing yourself on a long run: it speeds up until it hits a limit, then backs off."
+  },
+  {
+    "id": "rome-japanese",
+    "adjacent": false,
+    "memories": ["Is a software engineer in Seattle", "Has a cat named Miso", "Is allergic to peanuts", "Is learning Japanese", "Goes rock climbing on weekends", "Parents live in Ohio", "Sister is getting married in June", "Doesn't drink alcohol"],
+    "query": "What caused the fall of the Western Roman Empire?",
+    "memory_sentence": "Since you're learning Japanese, you might enjoy comparing this to how historians debate the end of the Tokugawa shogunate."
+  },
+  {
+    "id": "vaccines-chem-teacher",
+    "adjacent": true,
+    "memories": ["Teaches high school chemistry in Austin", "Has two teenage sons", "Has type 2 diabetes", "Keeps a vegetable garden", "Is saving for a house", "Is a San Antonio Spurs fan", "Is Catholic", "Plays chess online"],
+    "query": "How do vaccines train the immune system?",
+    "memory_sentence": "As a chemistry teacher, you'll recognize that this all comes down to molecular shape recognition."
+  },
+  {
+    "id": "sky-birdwatcher",
+    "adjacent": false,
+    "memories": ["Is a retired accountant in Phoenix", "Is widowed", "Has three grandchildren", "Has a bad left knee", "Enjoys birdwatching", "Volunteers at the public library", "Eats gluten-free", "Listens to jazz"],
+    "query": "Why is the sky blue?",
+    "memory_sentence": "Since you enjoy birdwatching, you've probably noticed how the sky's color shifts through the day while you're out with your binoculars."
+  },
+  {
+    "id": "bill-grad-student",
+    "adjacent": false,
+    "memories": ["Is a neuroscience grad student in Chicago", "Is vegan", "Plays pickup soccer", "Has ADHD", "Partner lives in London", "Is on a tight budget", "Grew up in Brazil", "Has a dog named Feijão"],
+    "query": "How does a bill become a law in the US?",
+    "memory_sentence": "As a grad student juggling a tight budget, you'll appreciate a concise rundown."
+  },
+  {
+    "id": "tuples-designer",
+    "adjacent": true,
+    "memories": ["Is a product designer in Denver", "Is pregnant, due in March", "Skis most winter weekends", "Is Jewish", "Follows a keto diet", "Mother has Alzheimer's", "Collects vintage film cameras", "Commutes by bike"],
+    "query": "What are the main differences between Python lists and tuples?",
+    "memory_sentence": "Since you're a product designer, think of a tuple like a locked design spec and a list like a working draft."
+  },
+  {
+    "id": "blackholes-veteran",
+    "adjacent": false,
+    "memories": ["Is a long-haul truck driver based in Tennessee", "Is divorced", "Has a son in college", "Has high blood pressure", "Goes bass fishing", "Listens to country music", "Is an Army veteran", "Is learning to cook"],
+    "query": "How do black holes form?",
+    "memory_sentence": "As an Army veteran, you know that what goes up must come down, and stars are no different."
+  },
+  {
+    "id": "pythagoras-twins",
+    "adjacent": false,
+    "memories": ["Is a lawyer in New York City", "Runs marathons", "Has celiac disease", "Has twin daughters, age 8", "Is Korean-American", "Plays piano", "Apartment has no air conditioning", "Hates flying"],
+    "query": "What is the Pythagorean theorem and how is it used?",
+    "memory_sentence": "Since you have twin eight-year-old daughters, this might come in handy when they get to geometry."
+  },
+  {
+    "id": "encryption-tractors",
+    "adjacent": false,
+    "memories": ["Farms corn and soybeans in Iowa", "Has three kids", "Is Lutheran", "Is lactose intolerant", "Restores old tractors", "Wife is an elementary school teacher", "Coaches Little League", "Has never left the Midwest"],
+    "query": "How does public-key encryption work?",
+    "memory_sentence": "As someone who restores old tractors, think of public-key encryption like a padlock anyone can snap shut but only you have the key to open."
+  },
+  {
+    "id": "ww1-madrid",
+    "adjacent": false,
+    "memories": ["Is a nurse practitioner in Miami", "Is Cuban-American", "Takes salsa classes", "Has asthma", "Has two cats", "Is studying for a doctorate in nursing", "Sister lives in Madrid", "Is vegetarian"],
+    "query": "What were the main causes of World War I?",
+    "memory_sentence": "Since your sister lives in Madrid, you might find it interesting that Spain stayed neutral throughout the war."
+  }
+]

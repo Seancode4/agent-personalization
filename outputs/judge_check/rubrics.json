@@ -1,0 +1,370 @@
+{
+  "tcp-runner": [
+    {
+      "criterion": "The response accurately explains how TCP handles packet loss, including concepts such as acknowledgment (ACK) and retransmission.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response uses clear and concise language that is understandable to a user with a basic knowledge of networking concepts.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response provides examples or analogies to illustrate how TCP manages packet loss, enhancing the user's understanding.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is free from technical jargon that may confuse the user, unless necessary terms are clearly defined.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is relevant to the user's context or interests, potentially relating networking concepts to real-world applications.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response is structured logically, guiding the user through the explanation step-by-step.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is concise, avoiding unnecessary information while still covering all essential aspects of TCP and packet loss.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response acknowledges potential follow-up questions the user might have and invites further discussion if desired.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response demonstrates an understanding of common misconceptions about TCP and packet loss, addressing them appropriately.",
+      "weight": 3
+    }
+  ],
+  "rome-japanese": [
+    {
+      "criterion": "The response accurately identifies multiple factors that contributed to the fall of the Western Roman Empire.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response provides historical context, including relevant dates or events surrounding the fall of the Western Roman Empire.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is clear and well-organized, making it easy for the user to follow the argument or explanation.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response avoids overly technical language or jargon that may not be accessible to a general audience.",
+      "weight": 3
+    },
+    {
+      "criterion": "The assistant uses engaging language that may resonate with the user's interests, such as references to technology or culture.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response includes a brief mention of the impact of the fall on subsequent historical periods or events.",
+      "weight": 2
+    },
+    {
+      "criterion": "The assistant acknowledges any complexities or debates among historians regarding the causes of the fall.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is concise and does not include irrelevant information that distracts from the main topic.",
+      "weight": 4
+    },
+    {
+      "criterion": "The assistant demonstrates empathy or personalization, perhaps by relating the topic back to the user's interests or hobbies.",
+      "weight": 2
+    }
+  ],
+  "vaccines-chem-teacher": [
+    {
+      "criterion": "The response provides a clear and accurate explanation of how vaccines work to train the immune system.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response uses appropriate scientific terminology related to immunology without being overly complex or technical.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response addresses the user's potential interest in the topic as a teacher by including examples or analogies suitable for a high school audience.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is concise and stays focused on the question without unnecessary information.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response includes references to credible sources or studies where applicable to support the explanation.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response acknowledges potential concerns or misconceptions about vaccines, providing reassurance where necessary.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is written in a friendly and engaging tone, suitable for conversational interaction.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response considers the user's background in teaching and may suggest ways to incorporate the information into a lesson plan or classroom discussion.",
+      "weight": 2
+    }
+  ],
+  "sky-birdwatcher": [
+    {
+      "criterion": "The response provides a clear and accurate scientific explanation for why the sky appears blue.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response is engaging and encourages further curiosity or follow-up questions.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is written in a friendly and approachable tone, suitable for a retired individual.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response avoids overly technical jargon and explains concepts in simple terms.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response includes a personal touch or relates the explanation to the user's interests, if applicable.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is concise and avoids unnecessary information that may confuse the user.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response respects the user's potential for mobility challenges by avoiding suggesting outdoor activities without consideration.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response is free from grammatical errors and is well-structured.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response acknowledges the user's age and experiences, ensuring respect and relevance.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response encourages further engagement or provides a segue into related topics like nature or science.",
+      "weight": 3
+    }
+  ],
+  "bill-grad-student": [
+    {
+      "criterion": "The response accurately explains the process of how a bill becomes a law in the US, including key steps such as introduction, committee review, voting, and presidential approval.",
+      "weight": 5
+    },
+    {
+      "criterion": "The explanation is clear and easy to understand, avoiding overly complex language or jargon that may confuse the user.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response is concise, providing a thorough yet succinct overview without unnecessary information.",
+      "weight": 4
+    },
+    {
+      "criterion": "The assistant acknowledges the user's background as a student, possibly relating the explanation to their academic interests or providing resources for further reading.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is engaging and maintains a conversational tone, making the information feel approachable.",
+      "weight": 4
+    },
+    {
+      "criterion": "The assistant does not assume prior knowledge of the legislative process, providing context where necessary.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response does not include irrelevant information about the US legislative process that may distract from the main question.",
+      "weight": 3
+    },
+    {
+      "criterion": "The assistant expresses consideration for the user's budget constraints, possibly suggesting free online resources for more information.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response is free from grammatical errors and is well-structured, enhancing the overall readability.",
+      "weight": 3
+    },
+    {
+      "criterion": "The assistant's tone is friendly and supportive, acknowledging the user's possible interest in civic education related to their studies.",
+      "weight": 3
+    }
+  ],
+  "tuples-designer": [
+    {
+      "criterion": "The response accurately defines both Python lists and tuples.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response clearly explains the primary differences between lists and tuples, such as mutability and syntax.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response includes relevant examples of when to use lists versus tuples.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response uses clear and concise language, avoiding overly technical jargon.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is structured logically, making it easy to follow and understand.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response highlights the performance implications of using lists versus tuples.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response acknowledges that both data structures can hold mixed data types.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response is free from grammatical errors and typos.",
+      "weight": 2
+    }
+  ],
+  "blackholes-veteran": [
+    {
+      "criterion": "The response provides a clear and accurate explanation of how black holes form.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response includes relevant scientific concepts, such as the role of massive stars and supernovae in black hole formation.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is written in an accessible language that is understandable to a general audience.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is concise and does not include unnecessary jargon or overly complex details.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response engages with the user's interests, potentially relating black holes to themes in country music or personal experiences.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response invites further questions or exploration of related topics, promoting engagement.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response acknowledges that the user is learning about a complex topic and offers encouragement or support.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response is free from errors and provides scientifically accurate information.",
+      "weight": 5
+    }
+  ],
+  "pythagoras-twins": [
+    {
+      "criterion": "Provides a clear and accurate definition of the Pythagorean theorem.",
+      "weight": 5
+    },
+    {
+      "criterion": "Includes a relevant example of how the Pythagorean theorem is used in real-life scenarios.",
+      "weight": 4
+    },
+    {
+      "criterion": "Explains the components of the theorem (a\u00b2 + b\u00b2 = c\u00b2) in a way that is easy to understand.",
+      "weight": 4
+    },
+    {
+      "criterion": "Uses accessible language suitable for a non-mathematical audience.",
+      "weight": 3
+    },
+    {
+      "criterion": "Mentions the theorem's historical significance or origin briefly.",
+      "weight": 2
+    },
+    {
+      "criterion": "Offers additional resources or references for further reading (e.g., links to educational materials).",
+      "weight": 2
+    },
+    {
+      "criterion": "Maintains a friendly and engaging tone throughout the response.",
+      "weight": 3
+    },
+    {
+      "criterion": "Does not include unnecessary technical jargon or overly complex explanations.",
+      "weight": 3
+    }
+  ],
+  "encryption-tractors": [
+    {
+      "criterion": "The response provides a clear and accurate explanation of public-key encryption.",
+      "weight": 5
+    },
+    {
+      "criterion": "The explanation includes the basic components of public-key encryption (e.g., public key, private key).",
+      "weight": 4
+    },
+    {
+      "criterion": "The response avoids overly technical jargon, making the concept accessible to someone without a technical background.",
+      "weight": 4
+    },
+    {
+      "criterion": "The assistant relates the explanation to the user's context or interests, if applicable (e.g., farming, coaching).",
+      "weight": 3
+    },
+    {
+      "criterion": "The response anticipates potential follow-up questions or confusion and addresses them proactively.",
+      "weight": 3
+    },
+    {
+      "criterion": "The assistant provides examples of how public-key encryption is used in real life.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response is concise and stays focused on the topic without unnecessary digressions.",
+      "weight": 4
+    },
+    {
+      "criterion": "The tone of the response is friendly and engaging, appropriate for a conversation with the user.",
+      "weight": 2
+    }
+  ],
+  "ww1-madrid": [
+    {
+      "criterion": "The response identifies the main causes of World War I, such as militarism, alliances, imperialism, and nationalism.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response provides a clear and concise explanation of each identified cause.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response is factually accurate and based on historical evidence.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response is organized logically, making it easy to follow the progression of ideas.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response uses appropriate terminology related to World War I and historical analysis.",
+      "weight": 4
+    },
+    {
+      "criterion": "The response is tailored to the user's background, possibly referencing the global impact of the war on diverse populations.",
+      "weight": 3
+    },
+    {
+      "criterion": "The response maintains a neutral and objective tone, avoiding bias or opinion.",
+      "weight": 5
+    },
+    {
+      "criterion": "The response is free of grammatical and spelling errors, ensuring readability.",
+      "weight": 2
+    },
+    {
+      "criterion": "The response includes a brief conclusion or summary of the main points discussed.",
+      "weight": 3
+    }
+  ]
+}
