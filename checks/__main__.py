@@ -3,10 +3,10 @@
     uv run python -m checks judge   [--data PATH] [--repeats N] [--regenerate]
     uv run python -m checks rubrics [--data PATH] [--regenerate]
     uv run python -m checks env                                       # GPU
-    uv run python -m checks policy  [--data PATH] [--prompts N] [--samples N]   # GPU
+    uv run python -m checks policy  [--data PATH] [--prompts N] [--samples N] [--model CKPT --label NAME]   # GPU
     uv run python -m checks persist                                   # GPU, needs OPENROUTER_API_KEY
 
-judge:   does the training judge pay for name-dropping?
+judge:   does the training judge pay for name-dropping (on the training rubric)?
 rubrics: how often do generated rubrics include a personalization criterion?
 env:     GPU, caches, keys, and vLLM are set up.
 policy:  the untrained policy's memory mentions, reward spread, and length, on irrelevant and relevant prompts.
@@ -17,6 +17,8 @@ judge, rubrics and policy share cached answers and rubrics under outputs/checks/
 
 import argparse
 from pathlib import Path
+
+import config
 
 from checks.common import DEFAULT_DATA, TRAINING_SET
 
@@ -36,6 +38,8 @@ def main():
     p.add_argument("--data", type=Path, default=TRAINING_SET, help="needs both relevant and irrelevant examples")
     p.add_argument("--prompts", type=int, default=20, help="per kind (irrelevant and relevant)")
     p.add_argument("--samples", type=int, default=8)
+    p.add_argument("--model", default=config.POLICY_MODEL, help="HF id, or a training checkpoint dir (LoRA)")
+    p.add_argument("--label", default="step0", help="output folder under outputs/checks/policy/, e.g. base-step200")
     sub.add_parser("persist", help="step-0 PersistBench on the untrained policy (GPU)")
     args = parser.parse_args()
 
@@ -55,7 +59,7 @@ def main():
     elif args.check == "policy":
         from checks import policy_check
 
-        policy_check.run(args.data, args.prompts, args.samples)
+        policy_check.run(args.data, args.prompts, args.samples, args.model, args.label)
     elif args.check == "persist":
         from checks import persist_check
 

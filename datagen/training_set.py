@@ -1,8 +1,8 @@
 """The training set: PersistBench-style profiles, each with ~5 first-person queries (half memory-relevant,
 half cross-domain irrelevant), gated for relevance, with a rubric and personalization labels per query.
 
-The injected personalization criterion is NOT stored: training/train.py appends it per --rubric mode,
-so one dataset serves all three arms.
+Each run builds its rubric from the stored one (training/reward.py: natural, or fixed with personalization
+criteria removed on irrelevant queries), so one dataset serves all three arms.
 """
 
 import random

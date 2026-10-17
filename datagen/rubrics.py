@@ -1,11 +1,8 @@
-"""Per-prompt rubrics, the injected personalization criterion, and the personalization-criterion labeler."""
+"""Per-prompt rubrics and the personalization-criterion labeler."""
 
 import config
 from utils.llm import chat_json, with_retries
 from utils.memory import format_memory
-
-# Appended to every training rubric (decided after the Day 1 checks; see NOTES.md).
-INJECTED_CRITERION = {"criterion": "Personalizes the response to the user", "weight": 3}
 
 # Deliberately neutral: it neither asks for nor discourages personalization criteria,
 # so the rubric check measures what a normal rubric pipeline produces.

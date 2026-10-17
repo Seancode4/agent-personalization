@@ -1,4 +1,4 @@
-"""Policy check (GPU): the untrained policy answers memory-irrelevant and memory-relevant prompts, 8 samples
+"""Policy check (GPU): the policy (untrained by default, or a training checkpoint via --model) answers memory-irrelevant and memory-relevant prompts, 8 samples
 each at temperature 1.0 as in training, graded on the training rubric (natural). For each kind: how often it
 mentions memory, how often it passes personalization criteria, the reward spread within each group (GRPO's
 learning signal), and answer length (sets the max-tokens cap).
@@ -52,7 +52,7 @@ def summarize(examples, graded, samples):
     return summary, results
 
 
-def run(data_path, n_prompts, samples):
+def run(data_path, n_prompts, samples, model=config.POLICY_MODEL, label="step0"):
     examples = {}
     for kind in KINDS:
         exs, cache_dir = load(data_path, relevant=kind == "relevant")
@@ -63,10 +63,10 @@ def run(data_path, n_prompts, samples):
     stored = get_rubrics(everything, cache_dir)
     rubrics = {ex["id"]: run_rubric(ex, "natural") if "rubric" in ex
                else [{**c, "personalization": False} for c in stored[ex["id"]]] for ex in everything}
-    out_dir = OUT / "policy"
+    out_dir = OUT / "policy" / label
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    llm = policy.load()
+    llm = policy.load(model)
     gens = policy.generate(llm, [policy.prompt(llm, ex["memories"], ex["query"]) for ex in everything], n=samples)
 
     def grade_one(job):
@@ -87,7 +87,7 @@ def run(data_path, n_prompts, samples):
         graded = list(pool.map(grade_one, [(ex, g) for ex, group in zip(everything, gens) for g in group]))
 
     n_irrelevant = len(examples["irrelevant"]) * samples
-    out = {"policy": config.POLICY_MODEL, "samples_per_prompt": samples}
+    out = {"policy": str(model), "label": label, "samples_per_prompt": samples}
     for kind, part in (("irrelevant", graded[:n_irrelevant]), ("relevant", graded[n_irrelevant:])):
         summary, results = summarize(examples[kind], part, samples)
         out[kind] = {"summary": summary, "results": results}
