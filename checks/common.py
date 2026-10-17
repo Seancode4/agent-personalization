@@ -11,12 +11,12 @@ DEFAULT_DATA = config.DATA_DIR / "judge_check.json"
 CHECK_EXAMPLES = config.DATA_DIR / "check_examples.json"
 
 
-def load(data_path):
-    """Memory-irrelevant examples from a check-examples JSON file or the training set (JSONL), plus the
-    output folder for this dataset. From the training set, held-out examples are preferred."""
+def load(data_path, relevant=False):
+    """Memory-irrelevant (or, with relevant=True, memory-relevant) examples from a check-examples JSON file or
+    the training set (JSONL), plus the output folder for this dataset. Held-out examples come first."""
     text = data_path.read_text()
     examples = [json.loads(line) for line in text.splitlines()] if data_path.suffix == ".jsonl" else json.loads(text)
-    examples = [ex for ex in examples if not ex.get("relevant", False)]
+    examples = [ex for ex in examples if ex.get("relevant", False) == relevant]
     examples.sort(key=lambda ex: ex.get("split") != "held_out")  # stable: held-out first, original order otherwise
     out_dir = OUT / data_path.stem
     out_dir.mkdir(parents=True, exist_ok=True)

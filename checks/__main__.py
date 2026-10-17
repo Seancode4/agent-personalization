@@ -9,7 +9,7 @@
 judge:   does the training judge pay for name-dropping?
 rubrics: how often do generated rubrics include a personalization criterion?
 env:     GPU, caches, keys, and vLLM are set up.
-policy:  the untrained policy's memory mentions, reward spread, and answer length.
+policy:  the untrained policy's memory mentions, reward spread, and length, on irrelevant and relevant prompts.
 persist: step-0 PersistBench on the untrained policy.
 
 judge, rubrics and policy share cached answers and rubrics under outputs/checks/<data file stem>/.
@@ -34,7 +34,7 @@ def main():
     sub.add_parser("env", help="GPU, vLLM, caches and keys are set up (GPU)")
     p = sub.add_parser("policy", help="untrained policy: memory mentions, reward spread, length (GPU)")
     p.add_argument("--data", type=Path, default=CHECK_EXAMPLES)
-    p.add_argument("--prompts", type=int, default=20)
+    p.add_argument("--prompts", type=int, default=20, help="per kind (irrelevant and relevant)")
     p.add_argument("--samples", type=int, default=8)
     sub.add_parser("persist", help="step-0 PersistBench on the untrained policy (GPU)")
     args = parser.parse_args()

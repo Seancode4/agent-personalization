@@ -9,5 +9,11 @@ dependencies = [
 [dependency-groups]
 # vLLM 0.19.1 is the newest release built on CUDA 12.8; later ones need CUDA 13 (driver >= 580), eniac has 570.
 gpu = [
+    "peft>=0.21.2 ; sys_platform == 'linux'",
+    "transformers>=4.57,<5 ; sys_platform == 'linux'",
+    "trl==1.13.0 ; sys_platform == 'linux'",
     "vllm==0.19.1 ; sys_platform == 'linux'",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

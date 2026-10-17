@@ -126,6 +126,12 @@ Rubric-based RL for personal agents can teach a model to bring up the user's mem
     ├── outputs/ # checks/<dataset>/, checks/policy/, persistbench/<label>/
     └── analysis/analysis.ipynb # plots and examples (later)
     Run each section from the repo root: uv run python -m datagen check-examples | uv run python -m checks {judge,rubrics,env,policy,persist} | uv run python -m evaluation --label step0
+    Training as built (Oct 17, training/train.py): TRL 1.13.0 GRPOTrainer, vLLM colocate on one L40, LoRA r=16 on all linear layers, lr 1e-5 constant, 16 prompts x 8 rollouts per step, beta=0, temperature 1.0, max completion 1024, 300 steps, seed 0. Rubric modes: natural (as generated; Base and Dropout) and fixed (personalization-labeled criteria removed on irrelevant queries). --dropout 0.5 drops floor(n/2) criteria per prompt per step (keep >= 3), seeded by (prompt id, step). Positive control: --personalization-weight 3 for ~50 steps. Injected criterion is a fallback only if natural rubrics are too weak in the pilot. Live metrics per step: reward, full-rubric reward, personalization-criterion pass rate on irrelevant answers, memory-mention rate on 16 sampled irrelevant answers (+ 10-step average). Outputs go to the required --output-dir: config.json, log.jsonl, rollouts/ every 10 steps, LoRA checkpoints every 25 steps.
+      uv run python -m training.train --output-dir DIR/control --personalization-weight 3 --max-steps 50
+      uv run python -m training.train --output-dir DIR/base
+      uv run python -m training.train --output-dir DIR/dropout --dropout 0.5
+      uv run python -m training.train --output-dir DIR/fixed --rubric fixed
+      uv run python -m evaluation --label base-step200 --model DIR/base/checkpoints/checkpoint-200
     Log every checkpoint's scores and raw responses to JSONL (or Weights & Biases).
     Correctness checks
     Places where a silent bug would invalidate the result. Verify these by hand.

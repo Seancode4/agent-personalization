@@ -16,7 +16,7 @@ from evaluation import evaluate
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--label", required=True, help="output folder name, e.g. step0 or base-step150")
-    parser.add_argument("--model", default=config.POLICY_MODEL, help="HF id or local path of a (merged) checkpoint")
+    parser.add_argument("--model", default=config.POLICY_MODEL, help="HF id, local model path, or a training checkpoint dir (LoRA)")
     args = parser.parse_args()
     evaluate.run(args.label, args.model)
 
