@@ -1,7 +1,7 @@
 """vLLM generation for the policy. Imports vllm lazily so the rest of the repo works without a GPU."""
 
 import config
-from memory import policy_system_prompt
+from utils.memory import policy_system_prompt
 
 
 def load(model=config.POLICY_MODEL, gpu_memory_utilization=0.85, max_model_len=8192):

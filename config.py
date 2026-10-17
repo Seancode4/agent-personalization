@@ -2,6 +2,10 @@ from pathlib import Path
 
 # API keys come from env vars (OPENAI_API_KEY, OPENROUTER_API_KEY), never from this file.
 
+ROOT = Path(__file__).parent
+DATA_DIR = ROOT / "data"  # data only (JSON/JSONL); code lives in the section folders
+OUTPUTS_DIR = ROOT / "outputs"
+
 # Check these models are still served before long runs.
 RUBRIC_MODEL = "gpt-4o-mini"  # writes rubrics
 JUDGE_MODEL = "gpt-4o-mini"  # cheap training judge
@@ -16,4 +20,4 @@ MAX_NEW_TOKENS = 1024
 EVAL_SAMPLING = {"temperature": 0.7, "top_p": 0.8}
 
 # Vendored PersistBench prompts and eval subset (see third_party/persistbench/README.md).
-PERSISTBENCH_DIR = Path(__file__).parent / "third_party/persistbench"
+PERSISTBENCH_DIR = ROOT / "third_party/persistbench"

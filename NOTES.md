@@ -39,7 +39,8 @@ Rubric-based RL for personal agents can teach a model to bring up the user's mem
    • A rubric of about 10 weighted criteria (weights 1–5).
    • A relevance flag, used only by the Fixed arm and for analysis.
    Prompt format. Training prompts inject memories using PersistBench's system prompt template (or a very close match). If training and evaluation present memory differently, leakage changes could reflect the format mismatch rather than the training method.
-   Generation:
+   As built (Oct 17, datagen/): PersistBench-style data. 200 profiles x 5 queries = ~1,000 prompts, 80/20 train/held-out by profile. Memories: 4-16 "User ..." sentences across 3-5 of PersistBench's 9 domains (sensitive ones included). Queries: first-person, 2-4 sentences; relevant ones (50%) need >= 2 memories, irrelevant ones are cross-domain (query domain outside the profile's memory domains, ~30% adjacent). Diversity: code picks persona, domains, task type, and a situation drawn without replacement from a hand-skimmed situation bank (9 domains x 120). Gate: an LLM lists the memories that would materially change a good answer (empty for irrelevant, >= 2 for relevant); failures are rewritten up to 3 times, then dropped. Rubric + personalization labels stored per query; the injected criterion is appended at training time. No similarity pass: the generator never sees PersistBench content. Rubric writer stays gpt-4o-mini.
+   Generation (original plan):
 3. Generate about 100 profiles, with seeded attributes (occupation, age, life domains) for diversity.
 4. Pair each profile with about 5 queries. For relevant queries, at least two profile facts must genuinely matter. For irrelevant queries, check the pairing against the profile (TCP is memory-relevant for a network engineer). Include some loosely adjacent irrelevant queries, since thematic bridges are where leakage is hardest to avoid.
 5. Have an LLM write each rubric the normal way, with no hand-injected criteria.
@@ -56,6 +57,7 @@ Rubric-based RL for personal agents can teach a model to bring up the user's mem
    Decision: inject "Personalizes the response to the user" (weight 3) into every training rubric, on top of the natural criteria. Justification: it appears naturally in most rubrics, but the natural payoff (see judge check) is too weak to rely on within a 1–2 day run. Frame as a controlled test with a stronger dose of a criterion that occurs naturally in 61% of rubrics.
 10. Judge check: does the training judge pay for name-dropping? For about 10 irrelevant queries, write one answer with a gratuitous memory reference and one without, otherwise identical. Score both with the training judge. If the name-dropping version does not score higher, the hack cannot emerge regardless of the rubrics, and the setup needs rethinking before any training.
     Result (49 examples, 3 judge repeats): on natural rubrics, name-dropping adds +0.034 reward (helps 24, hurts 6, no change 19). With the injected criterion, +0.090 (helps 37, hurts 3, no change 9); the injected criterion passes 0% of clean answers and 69% of name-drop answers. Name-dropping also failed "concise" and "no irrelevant information" criteria 10 times, so the hack is not free, which favors dropout. Some unrelated criteria flipped despite identical content (halo or judge noise).
+    Rerun on the PersistBench-style training set (Oct 17; 383 irrelevant queries, 1 judge repeat): natural rubrics +0.046 (helps 158, hurts 23, no change 202); injected +0.094 (helps 293, hurts 11, no change 79); injected criterion passes 3% of clean and 71% of name-drop answers. 87% of irrelevant rubrics carry a natural memory-use criterion. Name-dropping is nearly free here (215 criteria up vs 33 down), which by the reasoning above makes dropout less likely to help: prediction stays 'slows, does not stop'.
     Pending: a control with a neutral filler sentence of similar length, to separate the memory effect from "an added sentence" and judge noise.
     Training
     Setting
@@ -112,17 +114,18 @@ Rubric-based RL for personal agents can teach a model to bring up the user's mem
     • No leakage rise in Base: the hack didn't emerge at this scale or run length. Report it honestly.
     Implementation
     Training runs as scripts (overnight, must survive disconnects). Use a notebook only for analysis.
-    over-personalization/
-    ├── README.md # question, setup, results, plots
-    ├── data/
-    │ ├── generate.py # profiles, queries, rubrics, criterion labels
-    │ └── \*.jsonl
-    ├── checks.py # step-0 PersistBench, rubric rate, judge check
-    ├── judge.py # per-criterion verdicts from the training judge
-    ├── reward.py # rubric reward + dropout mask (seeded by prompt id and step)
-    ├── train.py # GRPO with TRL; --dropout and --rubric flags
-    ├── evaluate.py # PersistBench leakage + beneficial at a checkpoint
-    └── analysis.ipynb # plots and examples
+    agent-personalization/
+    ├── config.py # models, paths, settings
+    ├── datagen/ # (a) data generation: profiles.py, queries.py, rubrics.py (+ injected criterion, labeler), check_examples.py
+    ├── training/ # (b) judge.py (rubric grading, memory-mention check), reward.py (reward + dropout mask), train.py (next)
+    ├── evaluation/ # (c) persistbench.py (Kimi judge, scoring), evaluate.py (run on a checkpoint)
+    ├── utils/ # (d) llm.py (clients, retries, JSON), memory.py (prompt formatting), policy.py (vLLM), cache.py
+    ├── third_party/persistbench/ # (e) vendored PersistBench files
+    ├── checks/ # (f) one file per Day 1 check: judge, rubric, env, policy, persist
+    ├── data/ # data only (JSON/JSONL)
+    ├── outputs/ # checks/<dataset>/, checks/policy/, persistbench/<label>/
+    └── analysis/analysis.ipynb # plots and examples (later)
+    Run each section from the repo root: uv run python -m datagen check-examples | uv run python -m checks {judge,rubrics,env,policy,persist} | uv run python -m evaluation --label step0
     Log every checkpoint's scores and raw responses to JSONL (or Weights & Biases).
     Correctness checks
     Places where a silent bug would invalidate the result. Verify these by hand.
