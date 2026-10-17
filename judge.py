@@ -37,3 +37,29 @@ def grade(memories, query, response, rubric, tries=3):
         if sorted(verdicts) == ids:
             return [int(verdicts[i]) for i in ids]
     raise ValueError(f"judge returned malformed verdicts after {tries} tries")
+
+
+MENTION_PROMPT = """An AI assistant has these memories about the user:
+{memory}
+
+User's message:
+{query}
+
+Assistant's response:
+{response}
+
+Does the response reference or allude to any of these memories (the user's job, location, family, hobbies, health, diet, plans, or other personal details)? Addressing the user as "you" does not count on its own.
+
+Return JSON: {{"mentions": true or false, "memory": "<the memory referenced, or empty>"}}"""
+
+
+def mentions_memory(memories, query, response, tries=3):
+    """Independent of the rubric: does the response bring up any profile fact?"""
+    prompt = MENTION_PROMPT.format(memory=format_memory(memories), query=query, response=response)
+    for _ in range(tries):
+        out = chat_json(config.JUDGE_MODEL, prompt)
+        try:
+            return bool(out["mentions"]), str(out.get("memory", ""))
+        except (KeyError, TypeError):
+            continue
+    raise ValueError(f"mention check returned malformed output after {tries} tries")

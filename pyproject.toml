@@ -5,3 +5,9 @@ requires-python = ">=3.12"
 dependencies = [
     "openai>=3.33.0",
 ]
+
+[dependency-groups]
+# vLLM 0.19.1 is the newest release built on CUDA 12.8; later ones need CUDA 13 (driver >= 580), eniac has 570.
+gpu = [
+    "vllm==0.19.1 ; sys_platform == 'linux'",
+]

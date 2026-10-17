@@ -2,6 +2,9 @@
 
     uv run checks.py judge   [--data PATH] [--repeats N] [--regenerate]
     uv run checks.py rubrics [--data PATH] [--regenerate]
+    uv run checks.py env                                    # GPU
+    uv run checks.py policy  [--data PATH] [--prompts N] [--samples N]   # GPU
+    uv run checks.py persist                                # GPU, needs OPENROUTER_API_KEY
 
 judge: does the training judge pay for name-dropping? Each irrelevant query gets a clean answer
 and the same answer with one gratuitous memory sentence prepended. Both are graded on the natural
@@ -10,23 +13,34 @@ and the same answer with one gratuitous memory sentence prepended. Both are grad
 rubrics: how often do generated rubrics for memory-irrelevant queries include a personalization
 criterion? Decides whether to train on natural rubrics or inject the criterion.
 
-Both checks share cached answers and rubrics under outputs/<data file stem>/.
+env: torch sees the GPU, vLLM loads the policy, caches are off the home directory, keys are set.
+
+policy: the untrained policy answers memory-irrelevant prompts (8 samples each, temperature 1.0 as
+in training). Measures how often it mentions memory unprompted, the reward spread within each group
+(GRPO's learning signal), and answer length (sets the max-tokens cap).
+
+persist: step-0 PersistBench on the untrained policy (see evaluate.py).
+
+judge, rubrics and policy share cached rubrics under outputs/<data file stem>/.
 """
 
 import argparse
 import json
+import os
+import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from statistics import mean
+from statistics import mean, pstdev
 
 import config
 from data.generate import INJECTED_CRITERION, label_personalization, write_rubric
-from judge import grade
+from judge import grade, mentions_memory
 from llm import chat
 from reward import weighted_reward
 
 ROOT = Path(__file__).parent
 DEFAULT_DATA = ROOT / "data/judge_check.json"
+CHECK_EXAMPLES = ROOT / "data/check_examples.json"
 
 # The clean answer is written without memory, so the only difference between versions is the memory sentence.
 ANSWER_PROMPT = "Answer the following question clearly and accurately in about 150-250 words.\n\n{query}"
@@ -218,6 +232,128 @@ def rubric_check(data_path, regenerate):
     print(f"Full results: {path}")
 
 
+def env_check():
+    import torch
+
+    ok = True
+    print(f"torch {torch.__version__}, CUDA available: {torch.cuda.is_available()}")
+    if torch.cuda.is_available():
+        free, total = torch.cuda.mem_get_info()
+        print(f"GPU: {torch.cuda.get_device_name(0)}, {free / 2**30:.1f} / {total / 2**30:.1f} GB free")
+    else:
+        ok = False
+    home = str(Path.home())
+    for var in ("HF_HOME", "UV_CACHE_DIR", "VLLM_CACHE_ROOT", "XDG_CACHE_HOME"):
+        value = os.environ.get(var, "")
+        bad = not value or value.startswith(home)
+        ok &= not bad
+        print(f"{var:<16}{value or '(unset)'}{'   <- should point off the home directory' if bad else ''}")
+    for var in ("OPENAI_API_KEY", "OPENROUTER_API_KEY"):
+        print(f"{var:<20}{'set' if os.environ.get(var) else 'MISSING'}")
+    if not ok:
+        raise SystemExit("\nFix the items above before loading the model.")
+
+    import policy
+
+    examples = json.loads(CHECK_EXAMPLES.read_text())[:2]
+    llm = policy.load()
+    start = time.time()
+    outs = policy.generate(llm, [policy.prompt(llm, ex["memories"], ex["query"]) for ex in examples], n=4)
+    elapsed = time.time() - start
+    tokens = sum(o["n_tokens"] for group in outs for o in group)
+    thinking = any("<think>" in o["text"] for group in outs for o in group)
+    print(f"\nGenerated 8 answers, {tokens} tokens in {elapsed:.1f}s ({tokens / elapsed:.0f} tokens/s)")
+    print(f"Thinking tags present: {thinking}{'   <- thinking mode should be off' if thinking else ''}")
+    print(f"\nQ: {examples[0]['query']}\nA: {outs[0][0]['text'][:600]}")
+
+
+def policy_check(data_path, n_prompts, samples):
+    import policy
+
+    examples = json.loads(data_path.read_text())[:n_prompts]
+    _, cache_dir = load(data_path)
+    rubrics = get_rubrics(examples, cache_dir, regenerate=False)
+    out_dir = ROOT / "outputs/policy_check"
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    llm = policy.load()
+    gens = policy.generate(llm, [policy.prompt(llm, ex["memories"], ex["query"]) for ex in examples], n=samples)
+
+    # Grade on the training rubric (natural + injected criterion), and check for memory mentions.
+    jobs = [(ex, g) for ex, group in zip(examples, gens) for g in group]
+
+    def run(job):
+        ex, g = job
+        rubric = rubrics[ex["id"]] + [INJECTED_CRITERION]
+        verdicts = grade(ex["memories"], ex["query"], g["text"], rubric)
+        mentions, memory = mentions_memory(ex["memories"], ex["query"], g["text"])
+        return {
+            **g,
+            "reward": weighted_reward(rubric, verdicts),
+            "reward_natural": weighted_reward(rubric[:-1], verdicts[:-1]),
+            "injected_pass": verdicts[-1],
+            "mentions_memory": mentions,
+            "memory": memory,
+        }
+
+    with ThreadPoolExecutor(16) as pool:
+        graded = list(pool.map(run, jobs))
+
+    results = []
+    for i, ex in enumerate(examples):
+        group = graded[i * samples:(i + 1) * samples]
+        rewards = [g["reward"] for g in group]
+        with_mem = [g["reward"] for g in group if g["mentions_memory"]]
+        without = [g["reward"] for g in group if not g["mentions_memory"]]
+        results.append({
+            "id": ex["id"],
+            "query": ex["query"],
+            "reward_std": pstdev(rewards),
+            "mention_rate": mean(g["mentions_memory"] for g in group),
+            # Within-group reward advantage of mentioning memory: what GRPO would reinforce.
+            "mention_advantage": mean(with_mem) - mean(without) if with_mem and without else None,
+            "samples": group,
+        })
+
+    advantages = [r["mention_advantage"] for r in results if r["mention_advantage"] is not None]
+    summary = {
+        "n_prompts": len(results),
+        "samples_per_prompt": samples,
+        "mention_rate": mean(g["mentions_memory"] for g in graded),
+        "prompts_with_any_mention": mean(r["mention_rate"] > 0 for r in results),
+        "mean_reward": mean(g["reward"] for g in graded),
+        "mean_reward_std_within_group": mean(r["reward_std"] for r in results),
+        "groups_with_zero_std": mean(r["reward_std"] == 0 for r in results),
+        "injected_criterion_pass_rate": mean(g["injected_pass"] for g in graded),
+        "mention_advantage": mean(advantages) if advantages else None,
+        "groups_with_mixed_mentions": len(advantages),
+        "mean_tokens": mean(g["n_tokens"] for g in graded),
+        "max_tokens": max(g["n_tokens"] for g in graded),
+        "truncation_rate": mean(g["truncated"] for g in graded),
+    }
+    path = out_dir / "results.json"
+    path.write_text(json.dumps({"policy": config.POLICY_MODEL, "summary": summary, "results": results}, indent=2))
+
+    s = summary
+    print(f"\nPolicy check — {config.POLICY_MODEL}, {s['n_prompts']} irrelevant prompts x {samples} samples\n")
+    print(f"Mentions memory unprompted:      {s['mention_rate']:.0%} of answers "
+          f"({s['prompts_with_any_mention']:.0%} of prompts have at least one)")
+    print(f"Injected criterion pass rate:    {s['injected_criterion_pass_rate']:.0%}")
+    print(f"Reward: mean {s['mean_reward']:.3f}, within-group std {s['mean_reward_std_within_group']:.3f}, "
+          f"groups with zero spread {s['groups_with_zero_std']:.0%}")
+    if s["mention_advantage"] is not None:
+        print(f"Within-group reward advantage of mentioning memory: {s['mention_advantage']:+.3f} "
+              f"(over {s['groups_with_mixed_mentions']} groups with both kinds of answer)")
+    else:
+        print("No group had both memory-mentioning and clean answers.")
+    print(f"Length: mean {s['mean_tokens']:.0f} tokens, max {s['max_tokens']}, "
+          f"truncated at {config.MAX_NEW_TOKENS}: {s['truncation_rate']:.0%}")
+    examples_with = [g for g in graded if g["mentions_memory"]][:3]
+    for g in examples_with:
+        print(f"\n  mentions '{g['memory']}':\n    {g['text'][:300]!r}")
+    print(f"\nFull results: {path}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="check", required=True)
@@ -228,11 +364,25 @@ def main():
     p = sub.add_parser("rubrics", help="how often do generated rubrics include personalization criteria?")
     p.add_argument("--data", type=Path, default=DEFAULT_DATA)
     p.add_argument("--regenerate", action="store_true", help="rewrite cached rubrics and labels")
+    sub.add_parser("env", help="GPU, vLLM, caches and keys are set up (GPU)")
+    p = sub.add_parser("policy", help="untrained policy: memory mentions, reward spread, length (GPU)")
+    p.add_argument("--data", type=Path, default=CHECK_EXAMPLES)
+    p.add_argument("--prompts", type=int, default=20)
+    p.add_argument("--samples", type=int, default=8)
+    sub.add_parser("persist", help="step-0 PersistBench on the untrained policy (GPU)")
     args = parser.parse_args()
     if args.check == "judge":
         judge_check(args.data, args.repeats, args.regenerate)
     elif args.check == "rubrics":
         rubric_check(args.data, args.regenerate)
+    elif args.check == "env":
+        env_check()
+    elif args.check == "policy":
+        policy_check(args.data, args.prompts, args.samples)
+    elif args.check == "persist":
+        import evaluate
+
+        evaluate.run("step0")
 
 
 if __name__ == "__main__":
