@@ -16,8 +16,10 @@ Writes to --output-dir: config.json, log.jsonl (one line per step), rollouts/ste
 import argparse
 import hashlib
 import json
+import os
 import random
 import subprocess
+import time
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -64,8 +66,10 @@ def make_reward_fn(args, out_dir):
                     pass
             return verdicts, mention
 
+        start = time.time()
         with ThreadPoolExecutor(args.judge_workers) as pool:
             judged = list(pool.map(judge_one, range(len(texts))))
+        judge_seconds = time.time() - start
 
         rewards, full, records = [], [], []
         for i, (verdicts, mention) in enumerate(judged):
@@ -91,6 +95,7 @@ def make_reward_fn(args, out_dir):
         ]
         mentions = [m for _, m in judged if m is not None]
         log_metric("judge/failures", failures)
+        log_metric("time/judge_seconds", judge_seconds)
         log_metric("rubric/full_reward", mean(f for f in full if f is not None) if failures < len(full) else 0.0)
         log_metric("rubric/kept_fraction", mean(sum(r["mask"]) / len(r["mask"]) for r in records))
         if personalization_passes:
@@ -149,9 +154,17 @@ def main():
     parser.add_argument("--lora-r", type=int, default=16)
     parser.add_argument("--prompts-per-step", type=int, default=16)
     parser.add_argument("--num-generations", type=int, default=8)
-    parser.add_argument("--micro-batch", type=int, default=16, help="completions per forward/backward pass")
+    parser.add_argument("--micro-batch", type=int, default=4, help="completions per forward/backward pass "
+                        "(16 runs out of memory on an L40 with vLLM colocated at 35%%)")
     parser.add_argument("--max-completion-length", type=int, default=config.MAX_NEW_TOKENS)
     parser.add_argument("--vllm-memory", type=float, default=0.35, help="share of GPU memory vLLM reserves")
+    parser.add_argument("--vllm-sleep", action="store_true",
+                        help="free vLLM's memory during the training update (allows a larger --micro-batch)")
+    parser.add_argument("--is-mode", default="token_truncate",
+                        choices=["token_truncate", "token_mask", "sequence_truncate", "sequence_mask"],
+                        help="vLLM/trainer importance-sampling correction. TRL's default, sequence_mask, multiplies "
+                             "ratios over the whole answer and zeroes answers outside the bounds; with ~400-token "
+                             "answers that discards data, so per-token truncation is the default here")
     parser.add_argument("--save-steps", type=int, default=25)
     parser.add_argument("--rollout-every", type=int, default=10)
     parser.add_argument("--mention-sample", type=int, default=16)
@@ -170,6 +183,9 @@ def main():
     if not args.resume:
         write_config(args, out_dir)
 
+    # Less fragmentation in PyTorch's GPU allocator: fewer out-of-memory errors with vLLM colocated. Must be set
+    # before torch is imported.
+    os.environ.setdefault("PYTORCH_ALLOC_CONF", "expandable_segments:True")
     from datasets import Dataset
     from peft import LoraConfig
     from trl import GRPOConfig, GRPOTrainer
@@ -193,6 +209,8 @@ def main():
         use_vllm=True,
         vllm_mode="colocate",
         vllm_gpu_memory_utilization=args.vllm_memory,
+        vllm_enable_sleep_mode=args.vllm_sleep,
+        vllm_importance_sampling_mode=args.is_mode,
         chat_template_kwargs={"enable_thinking": False},
         model_init_kwargs={"dtype": "bfloat16"},
         logging_steps=1,
