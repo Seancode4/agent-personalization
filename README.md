@@ -27,7 +27,7 @@ Rubric-based RL is a natural way to train personal agents, but rubrics often inc
 
 ## Results
 
-### 1. Auto-generated rubrics invite over-personalization, and RL learns it fast
+### 1. Auto-generated rubrics reward over-personalization
 
 With no prompting to do so, the rubric generator made 25% of criteria on memory-irrelevant prompts (922 of 3,708) personalization criteria.
 
