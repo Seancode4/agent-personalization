@@ -4,7 +4,7 @@ This experiment looks at personal agents that answer queries with access to save
 
 Training made the model reference memory almost everywhere: leakage on irrelevant queries rose from 22% to 94%. I tested two interventions. Rubric Dropout, a recent defense against rubric hacking that randomly drops criteria each step, had no measurable effect. Removing personalization criteria from irrelevant queries helped only partly (78%): the model still learned to mention memory on queries where no criterion explicitly asked for it.
 
-Two possible explanations are: (a) criteria on irrelevant queries were written with the memory in view and reward memory-informed content without mentioning personalization, or (b) rewarding memory use on relevant queries spills over into memory use everywhere. Either way, removing criteria that look like personalization is not enough.
+Two possible explanations are: (a) criteria on irrelevant queries indirectly rewarded references to memory without mentioning personalization, or (b) rewarding memory use on relevant queries spills over into memory use everywhere. Either way, removing criteria that look like personalization is not enough.
 
 ## Question
 
