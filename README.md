@@ -119,6 +119,7 @@ Criterion-level defenses, whether dropout or deletion, did not prevent over-pers
 
 ## Next steps
 
+- **Identify cause of leakage rise in Fixed:** Train only on memory irrelevant queries and see if the models still learn to over-use memories (this indicates that rubrics tend to implicitly reward the memory information)
 - **Penalty criterion:** reward not mentioning memory on irrelevant prompts. Expected to reduce leakage; open questions are whether it transfers to an independent judge and whether it suppresses beneficial memory use.
 - **Counterfactual reward:** within each GRPO group, half the rollouts see memory and half don't, so memory is rewarded only when it measurably improves the answer, with no relevance labels needed.
 
